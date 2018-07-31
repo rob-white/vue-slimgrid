@@ -1,0 +1,38 @@
+// SlimGrid Theme Variables
+
+// Base Grid
+$slimgrid-font-size:                                14px;
+$slimgrid-font-color:                               #73879c;
+$slimgrid-bg-color:                                 #ffffff;
+$slimgrid-border-color:                             #e6e9ed;
+$slimgrid-range-border:                             3px solid black;
+$slimgrid-cell-selected-color:                      #ffffff;
+$slimgrid-cell-selected-bg-color:                   #2a3f54;
+
+// Grid Headers
+$slimgrid-header-bg-color:                          #ffffff;
+$slimgrid-headerrow-bg-color:                       #ffffff;
+$slimgrid-headerrow-input-height:                   25px;
+$slimgrid-header-menubutton-width:                  18px;
+$slimgrid-header-sort-asc-bg:                       none; //url(./assets/images/sort-asc.gif);
+$slimgrid-header-sort-desc-bg:                      none; //url(./assets/images/sort-desc.gif);
+$slimgrid-header-menubutton-bg-image:               none; //url(./assets/images/down.png);
+$slimgrid-header-menubutton-filtered-bg-image:      none; //url(./assets/images/filter.png);
+$slimgrid-header-menubutton-sort-asc-bg-image:      none; //url(./assets/images/sort-asc.png);
+$slimgrid-header-menubutton-sort-desc-bg-image:     none; //url(./assets/images/sort-desc.png);
+
+// Grid Pager
+$slimgrid-pager-height:                             45px;
+$slimgrid-pager-padding:                            12px;
+$slimgrid-pager-bg-color:                           #ffffff;
+$slimgrid-pager-download-link-font-color:           #337ab7;
+$slimgrid-pager-download-link-text-decoration:      underline;
+
+// Context Menu
+$slimgrid-context-menu-border-color:                #e6e9ed;
+$slimgrid-context-menu-bg-color:                    #ffffff;
+$slimgrid-context-menu-shadow:                      2px 2px 2px #e6e9ed;
+$slimgrid-context-menu-opt-disabled-font-color:     #c5c5c5;
+$slimgrid-context-menu-opt-disabled-bg-color:       $slimgrid-context-menu-bg-color;
+$slimgrid-context-menu-opt-hover-font-color:        $slimgrid-font-color;
+$slimgrid-context-menu-opt-hover-bg-color:          #e6e9ed;

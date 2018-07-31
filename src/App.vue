@@ -1,28 +1,29 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <slim-grid :data="data" :width="600" :height="300"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import SlimGrid from "./components/SlimGrid.vue";
 
 export default {
-  name: "app",
-  components: {
-    HelloWorld
+  components: { SlimGrid },
+  data() {
+    return {
+      data: []
+    };
+  },
+  mounted() {
+    var data = [];
+    for (var i = 0; i < 1000; i++) {
+      var row = { id: i };
+      for (var j = 0; j < 10; j++) {
+        row["column-" + j] = i * j;
+      }
+      data.push(row);
+    }
+    this.data = data;
   }
 };
 </script>
-
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

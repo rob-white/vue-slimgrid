@@ -8,6 +8,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "json2csv": "^4.1.6",
+    "lodash": "^4.17.10",
+    "slickgrid-es6": "^0.4.2",
     "vue": "^2.5.16"
   },
   "devDependencies": {
