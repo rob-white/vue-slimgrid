@@ -1,7 +1,8 @@
 // SlimGrid Theme Variables
 
 // Base Grid
-$slimgrid-font-size:                                14px;
+$slimgrid-font-family:                              system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+$slimgrid-font-size:                                .875rem;
 $slimgrid-font-color:                               #73879c;
 $slimgrid-bg-color:                                 #ffffff;
 $slimgrid-border-color:                             #e6e9ed;
@@ -14,12 +15,12 @@ $slimgrid-header-bg-color:                          #ffffff;
 $slimgrid-headerrow-bg-color:                       #ffffff;
 $slimgrid-headerrow-input-height:                   25px;
 $slimgrid-header-menubutton-width:                  18px;
-$slimgrid-header-sort-asc-bg:                       none; //url(./assets/images/sort-asc.gif);
-$slimgrid-header-sort-desc-bg:                      none; //url(./assets/images/sort-desc.gif);
-$slimgrid-header-menubutton-bg-image:               none; //url(./assets/images/down.png);
-$slimgrid-header-menubutton-filtered-bg-image:      none; //url(./assets/images/filter.png);
-$slimgrid-header-menubutton-sort-asc-bg-image:      none; //url(./assets/images/sort-asc.png);
-$slimgrid-header-menubutton-sort-desc-bg-image:     none; //url(./assets/images/sort-desc.png);
+$slimgrid-header-sort-asc-bg:                       "./assets/images/sort-asc.gif";
+$slimgrid-header-sort-desc-bg:                      "./assets/images/sort-desc.gif";
+$slimgrid-header-menubutton-bg-image:               "./assets/images/down.png";
+$slimgrid-header-menubutton-filtered-bg-image:      "./assets/images/filter.png";
+$slimgrid-header-menubutton-sort-asc-bg-image:      "./assets/images/sort-asc.png";
+$slimgrid-header-menubutton-sort-desc-bg-image:     "./assets/images/sort-desc.png";
 
 // Grid Pager
 $slimgrid-pager-height:                             45px;

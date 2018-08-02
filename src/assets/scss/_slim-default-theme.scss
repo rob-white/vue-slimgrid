@@ -1,33 +1,26 @@
-.ui-widget {
-  font-family: inherit;
-  font-size: inherit;
-}
-
-
 // Grid Styles
 .slim-grid {
+  font-family: $slimgrid-font-family;
+  font-size: $slimgrid-font-size;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
   color: $slimgrid-font-color !important;
   font-size: $slimgrid-font-size !important;
   border-top: 1px solid $slimgrid-border-color !important;
   border-right: 1px solid $slimgrid-border-color !important;
   border-left: 1px solid $slimgrid-border-color !important;
   border-bottom: 1px solid $slimgrid-border-color !important;
-}
-
-.slick-viewport {
-  background-color: $slimgrid-bg-color !important;
-}
-
-.slim-grid {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
 
   div {
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
   }
+}
+
+.slick-viewport {
+  background-color: $slimgrid-bg-color !important;
 }
 
 .slick-range-decorator {
@@ -126,6 +119,9 @@
 
 // Header Menu Styles
 .slick-header-menu {
+
+  font-family: $slimgrid-font-family;
+
   label {
     font-weight: 400;
   }
@@ -192,6 +188,8 @@
 
 // Pager Styles
 .slim-pager {
+  font-family: $slimgrid-font-family;
+  font-size: $slimgrid-font-size;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -218,10 +216,14 @@
     display: inline-block;
 
     .slim-pager-download-link {
+      text-decoration: none;
       margin-right: 10px;
       color: $slimgrid-pager-download-link-font-color !important;
-      text-decoration: $slimgrid-pager-download-link-text-decoration !important;
-      cursor: auto;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 

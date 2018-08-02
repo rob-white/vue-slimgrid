@@ -11,15 +11,10 @@ export default {
     this.fireSlimGridEvent("onBeforeInit", {});
 
     this.generateColumns();
-
     this.generateFilters();
-
     this.createDataView();
-
     this.createSlickGrid();
-
     this.registerPlugins();
-
     this.registerEvents();
 
     this.slickGrid.init();
@@ -36,9 +31,7 @@ export default {
     this.fireSlimGridEvent("onBeforeDataUpdate", {});
 
     this.generateColumns();
-
     this.generateFilters();
-
     this.setOptions();
 
     this.dataView.beginUpdate();
@@ -72,9 +65,11 @@ export default {
   generateColumns() {
     this.columns = _(this.getColumns())
       .map(this.getColumnOptions)
-      .filter(o => {
-        return _.isFunction(o.hidden) ? !o.hidden(o) : !o.hidden;
-      })
+      .filter(
+        o => {
+          return _.isFunction(o.hidden) ? !o.hidden(o) : !o.hidden;
+        }
+      )
       .sortBy([
         o => {
           return _.isFunction(o.order) ? o.order(o) : o.order;
@@ -93,13 +88,7 @@ export default {
       .keyBy("id")
       .mapValues(() => "")
       .assign(
-        _.pick(
-          this.filters,
-          _(this.columns)
-            .keyBy("id")
-            .keys()
-            .value()
-        )
+        _.pick(this.filters, _(this.columns).keyBy("id").keys().value())
       )
       .value();
 
@@ -143,7 +132,7 @@ export default {
   },
 
   /**
-   * ...
+   * Creates the underlying SlickGrid instance and sets the selection model.
    */
   createSlickGrid() {
     this.slickGrid = new Slick.Grid(
@@ -157,7 +146,7 @@ export default {
   },
 
   /**
-   * ...
+   * Register Grid, DataView, Selection Model, and Plugin events.
    */
   registerEvents() {
     const gridEvents = [
@@ -190,15 +179,13 @@ export default {
       })
       .value();
 
-    _.forEach(_.concat(gridEvents, pluginEvents), registee =>
-      this.handleEventRegistration(registee)
-    );
+    _.forEach(_.concat(gridEvents, pluginEvents), registee => this.handleEventRegistration(registee));
 
     this.registerHeaderInputEvent();
   },
 
   /**
-   * ...
+   * Register plugins with the SlickGrid instance.
    */
   registerPlugins() {
     _(this.plugins)
@@ -243,9 +230,7 @@ export default {
    */
   registerHeaderInputEvent() {
     let $vm = this;
-    $($vm.slickGrid.getHeaderRow()).delegate(":input", "change keyup", function(
-      e
-    ) {
+    $($vm.slickGrid.getHeaderRow()).delegate(":input", "change keyup", function(e) {
       const columnId = $(this).data("columnId");
 
       if (!columnId) return;
@@ -459,10 +444,7 @@ export default {
     }
 
     return _.mapValues(defaults, (value, key) => {
-      return _.isFunction(value) &&
-        ["formatter", "hidden", "order"].indexOf(key) === -1
-        ? value()
-        : value;
+      return _.isFunction(value) && ["formatter", "hidden", "order"].indexOf(key) === -1 ? value() : value;
     });
   },
 

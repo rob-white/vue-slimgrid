@@ -54,9 +54,7 @@ export default {
       before(e, args) {
         $("html").css({ cursor: "" });
 
-        return {
-          row: this.getSelectedRows()
-        };
+        return { row: this.getSelectedRows()};
       },
       on(e, args) {
         this.$emit("grid-dbl-click", e, args);
@@ -140,18 +138,14 @@ export default {
     onHeaderRowCellRendered: {
       before(e, args) {
         if (args.column.id === "_checkbox_selector") {
-          $("<input style='display: none;' class='form-control' type='text'>")
+          $("<input style='display: none;' type='text'>")
             .data("columnId", args.column.id)
             .val(this.filters[args.column.id])
             .appendTo(args.node);
         }
 
         $(args.node).empty();
-        $(
-          "<input title='" +
-            args.column.id +
-            "' class='form-control' style='text-align: center;' type='text'>"
-        )
+        $("<input title='" + args.column.id + "' type='text'>")
           .data("columnId", args.column.id)
           .val(this.filters[args.column.id])
           .appendTo(args.node);
@@ -162,19 +156,16 @@ export default {
     },
     onAddNewRow: {
       before(e, args) {
-        var row = {},
-          columns = args.grid.getColumns(),
-          item = args["item"];
+        var row = {};
+        var columns = args.grid.getColumns();
+        var item = args["item"];
+
         // For each column we have, check to see if we had a value added for it
         _.forEach(columns, function(col) {
-          row[col["id"]] = item.hasOwnProperty(col["id"])
-            ? item[col["id"]]
-            : null;
+          row[col["id"]] = item.hasOwnProperty(col["id"]) ? item[col["id"]] : null;
         });
 
-        return {
-          row: row
-        };
+        return { row: row };
       },
       on(e, args) {
         this.$emit("add-new-row", e, args);
@@ -211,9 +202,7 @@ export default {
         $("html").css({ cursor: "" });
         e.preventDefault();
 
-        return {
-          cell: args.grid.getCellFromEvent(e)
-        };
+        return { cell: args.grid.getCellFromEvent(e) };
       },
       on(e, args) {
         this.$emit("context-menu", e, args);
@@ -307,9 +296,7 @@ export default {
 
         this.calculatePagerStats(args);
 
-        return {
-          row: this.getSelectedRowsByRanges(args[0])
-        };
+        return { row: this.getSelectedRowsByRanges(args[0]) };
       },
       on(e, args) {
         this.$emit("selected-ranges-changed", e, args);
