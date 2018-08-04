@@ -1,4 +1,4 @@
-# vue-slickgrid
+# vue-slimgrid
 
 ## Project setup
 ```

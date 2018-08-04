@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import SlimGrid from "./components/SlimGrid.vue";
+import SlimGrid from "../src/components/SlimGrid.vue";
 
 export default {
   components: { SlimGrid },

@@ -1,12 +1,13 @@
 {
-  "name": "vue-slickgrid",
+  "name": "vue-slimgrid",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name SlimGrid ./src/components/SlimGrid.vue",
     "lint": "vue-cli-service lint"
   },
+  "license": "MIT",
+  "homepage": "https://github.com/rob-white/vue-slimgrid",
   "dependencies": {
     "json2csv": "^4.1.6",
     "lodash": "^4.17.10",
