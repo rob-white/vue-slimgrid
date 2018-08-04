@@ -5,13 +5,10 @@
 $ npm i vue-slimgrid --save
 ```
 
-### Compiles and hot-reloads for development
+## Development
+
+### Compiles and hot-reloads
 ```
 cd ./examples
 npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
 ```
