@@ -1,8 +1,8 @@
 # vue-slimgrid
 
-## Project setup
-```
-npm install
+## Installation
+```sh
+$ npm i vue-slimgrid --save
 ```
 
 ### Compiles and hot-reloads for development
