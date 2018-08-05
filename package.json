@@ -1,6 +1,6 @@
 {
   "name": "vue-slimgrid",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "./dist/SlimGrid.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
