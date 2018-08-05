@@ -1,10 +1,10 @@
 {
   "name": "vue-slimgrid",
   "version": "0.1.2",
-  "main": "./dist/SlimGrid.umd.min.js",
+  "main": "dist/slimgrid.umd.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name SlimGrid ./src/components/SlimGrid.vue",
+    "build": "vue-cli-service build --target lib --name slimgrid ./src/components/SlimGrid.vue",
     "lint": "vue-cli-service lint"
   },
   "license": "MIT",
