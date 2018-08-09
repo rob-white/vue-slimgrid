@@ -1,7 +1,7 @@
 import $ from "jquery";
 import _ from "lodash";
 import Filter from "./filter";
-import { Slick } from "slickgrid-es6";
+import "slickgrid-es6";
 
 export default {
   /**
