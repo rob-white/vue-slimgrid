@@ -1,5 +1,5 @@
 import $ from "jquery";
-import "slickgrid-es6";
+import { Slick } from "slickgrid-es6";
 
 export default GroupItemMetadataProvider;
 

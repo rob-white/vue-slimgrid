@@ -1,6 +1,6 @@
 ﻿import $ from "jquery";
 import _ from "lodash";
-import "slickgrid-es6";
+import { Slick } from "slickgrid-es6";
 
 export default HeaderFilter;
 
