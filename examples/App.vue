@@ -9,11 +9,9 @@ import SlimGrid from "../src/components/SlimGrid.vue";
 
 export default {
   components: { SlimGrid },
-  data() {
-    return {
-      data: []
-    };
-  },
+  data: () => ({
+    data: []
+  }),
   mounted() {
     var data = [];
     for (var i = 0; i < 1000; i++) {

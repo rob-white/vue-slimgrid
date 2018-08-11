@@ -22,12 +22,12 @@ import SlimGrid from 'vue-slimgrid';
 
 export default {
   components: { SlimGrid },
-  data() => ({
+  data: () => ({
       data: [],
       columnOptions: {}
   }),
   mounted() {
-    this.generateDummyData();
+    this.data = this.generateDummyData();
   },
   methods: {
     generateDummyData() {
@@ -39,7 +39,7 @@ export default {
         }
         data.push(row);
       }
-      this.data = data;
+      return data;
     }
   }
 }
