@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <slim-grid :data="data"></slim-grid>
+    <slim-grid :data="data" :height="500"></slim-grid>
   </div>
 </template>
 
