@@ -10,7 +10,7 @@
   background-image: url(../assets/images/down.gif);
   cursor: pointer;
   display: none;
-  border-left: thin ridge silver;
+  border-left: 1px solid #e6e9ed !important;
 }
 
 .slick-header-column:hover > .slick-header-menubutton, .slick-header-column-active .slick-header-menubutton {

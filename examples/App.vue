@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <slim-grid :data="data" :width="600" :height="300"/>
+    <slim-grid :data="data"></slim-grid>
   </div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
     var data = [];
     for (var i = 0; i < 1000; i++) {
       var row = { id: i };
-      for (var j = 0; j < 10; j++) {
+      for (var j = 0; j < 6; j++) {
         row["column-" + j] = i * j;
       }
       data.push(row);
