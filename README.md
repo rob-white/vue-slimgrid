@@ -31,10 +31,10 @@ export default {
   },
   methods: {
     generateDummyData() {
-      var data = [];
-      for (var i = 0; i < 1000; i++) {
-        var row = { id: i };
-        for (var j = 0; j < 6; j++) {
+      let data = [];
+      for (let i = 0; i < 1000; i++) {
+        let row = { id: i };
+        for (let j = 0; j < 6; j++) {
           row["column-" + j] = i * j;
         }
         data.push(row);
@@ -46,6 +46,12 @@ export default {
 </script>
 
 ```
+
+## To-Do
+- Add documentation of dependencies and reference to slickgrid-es6/base slickgrid repo.
+- Add documentation for available events.
+- Add documentation on how to use ```columnOptions``` prop.
+- Add open source license stuff.
 
 ## Development
 
