@@ -63,7 +63,8 @@ export default {
 - Add documentation for available events.
 - Add documentation for available props.
 
-## Development
+## Contribute
+This package was built to simply make it easier to integrate SlickGrid into personal Vue projects. Some SlickGrid functionality may not work (I haven't tested it on everything), but any pull requests are welcome to add in features or fix bugs!
 
 ### Compiles and Hot-Reloads
 ```
