@@ -10,6 +10,11 @@
   },
   "license": "MIT",
   "homepage": "https://github.com/rob-white/vue-slimgrid",
+  "keywords": [
+    "slickgrid",
+    "vue",
+    "grid"
+  ],
   "dependencies": {
     "json2csv": "^4.1.6",
     "lodash": "^4.17.10",
