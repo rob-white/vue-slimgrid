@@ -1,4 +1,14 @@
-# vue-slimgrid
+# Vue Slimgrid
+A simple Vue wrapper component for [SlickGrid](https://github.com/mleibman/SlickGrid) using [SlickGrid-ES6](https://github.com/DimitarChristoff/slickgrid-es6) by DimitarChritoff as a foundation!
+
+
+Includes some additional plugins built-in:
+- [Slick Header Filter (danny-sg)](https://github.com/danny-sg/slickgrid-spreadsheet-plugins)
+- [External Copy/Paste (Celebio)](https://github.com/Celebio/SlickGrid)
+- [Conditional Input Filtering (ghiscoding)](https://stackoverflow.com/a/16779331)
+- Pager w/ Selection Statistics (Avg, Count, Min, Max, Sum)
+- Raw/Filtered Data Download to CSV
+- Right-Click Context Menu
 
 ## Installation
 ```sh
@@ -48,10 +58,8 @@ export default {
 ```
 
 ## To-Do
-- Add documentation of dependencies and reference to slickgrid-es6/base slickgrid repo.
 - Add documentation for available events.
-- Add documentation on how to use ```columnOptions``` prop.
-- Add open source license stuff.
+- Add documentation for available props.
 
 ## Development
 
