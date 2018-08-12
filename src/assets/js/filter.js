@@ -1,5 +1,8 @@
 export default Filter;
 
+// Author: ghiscoding
+// https://stackoverflow.com/a/16779331
+//
 function Filter(item) {
   // Regex pattern to validate numbers
   // a number negative/positive with decimals with/without $, %
