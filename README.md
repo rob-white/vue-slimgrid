@@ -12,20 +12,24 @@ Includes some additional plugins/features built-in:
 - Right-Click Context Menu
 
 ## Installation
+### NPM
 ```sh
 npm i vue-slimgrid --save
+```
+### Yarn
+```sh
 yarn add vue-slimgrid
 ```
 
+## Example.vue
 ![Example](https://raw.githubusercontent.com/rob-white/vue-slimgrid/master/doc/example2.png)
 
-## Example.vue
-```html
 
+```html
 <style src="../node_modules/vue-slimgrid/dist/slimgrid.css"></style>
 
 <template>
-    <slim-grid :data="data" :column-options="columnOptions"></slim-grid>
+    <slim-grid :data="data"></slim-grid>
 </template>
 
 <script>
@@ -34,12 +38,8 @@ import SlimGrid from 'vue-slimgrid';
 export default {
   components: { SlimGrid },
   data: () => ({
-      data: [],
-      columnOptions: {}
+      data: this.generateDummyData()
   }),
-  mounted() {
-    this.data = this.generateDummyData();
-  },
   methods: {
     generateDummyData() {
       let data = [];
@@ -55,15 +55,23 @@ export default {
   }
 }
 </script>
-
 ```
 
-## To-Do
-- Add documentation for available events.
-- Add documentation for available props.
+## Available Props
+*To-Do*
+
+## Available Events
+*To-Do*
 
 ## Contribute
 This package was built to simply make it easier to integrate SlickGrid into personal Vue projects. Some SlickGrid functionality may not work (I haven't tested it on everything), but any pull requests are welcome to add in features or fix bugs!
+
+If you're looking for a fully featured, "battle-tested" grid solution, I'd check out [ag-grid](https://www.ag-grid.com).
+
+### Install Dependencies
+```
+npm install
+```
 
 ### Compiles and Hot-Reloads
 ```
