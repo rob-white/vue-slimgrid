@@ -12,7 +12,11 @@
   "homepage": "https://github.com/rob-white/vue-slimgrid",
   "keywords": [
     "slickgrid",
+    "vue-slickgrid",
+    "vue-slimgrid",
     "vue",
+    "vuejs",
+    "vue2",
     "grid"
   ],
   "dependencies": {
