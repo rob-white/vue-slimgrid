@@ -60,7 +60,7 @@ function HeaderFilter(options) {
         return false;
       }
 
-      var $el = $("<div></div>")
+      var $el = $('<div><div class="caret"></div></div>')
         .addClass("slick-header-menubutton")
         .data("column", column);
 
@@ -200,7 +200,7 @@ function HeaderFilter(options) {
         handleApply(ev, columnDef);
       });
 
-    $('<button class="btn btn-default">Cancel</button>')
+    $('<button>Cancel</button>')
       .appendTo($menu)
       .bind("click", hideMenu);
 

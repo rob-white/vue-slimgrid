@@ -1,32 +1,27 @@
-// SlimGrid Theme Variables
-
 // Base Grid
 $slimgrid-font-family:                              system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 $slimgrid-font-size:                                .875rem;
-$slimgrid-font-color:                               #73879c;
+$slimgrid-font-color:                               #606f7b;
 $slimgrid-bg-color:                                 #ffffff;
-$slimgrid-border-color:                             #e6e9ed;
-$slimgrid-range-border:                             3px solid black;
-$slimgrid-cell-selected-color:                      #ffffff;
-$slimgrid-cell-selected-bg-color:                   #2a3f54;
+$slimgrid-border-color:                             #dae1e7;
+$slimgrid-border-radius:                            .25rem;
+$slimgrid-range-border:                             3px solid #000000;
+$slimgrid-cell-selected-color:                      #606f7b;
+$slimgrid-cell-selected-bg-color:                   #f1f5f8;
 
 // Grid Headers
-$slimgrid-header-bg-color:                          #ffffff;
-$slimgrid-headerrow-bg-color:                       #ffffff;
+$slimgrid-header-bg-color:                          #f8fafc;
+$slimgrid-headerrow-bg-color:                       #f8fafc;
 $slimgrid-headerrow-input-height:                   25px;
 $slimgrid-header-menubutton-width:                  18px;
-$slimgrid-header-sort-asc-bg:                       "./assets/images/sort-asc.gif";
-$slimgrid-header-sort-desc-bg:                      "./assets/images/sort-desc.gif";
-$slimgrid-header-menubutton-bg-image:               "./assets/images/down.png";
-$slimgrid-header-menubutton-filtered-bg-image:      "./assets/images/filter.png";
-$slimgrid-header-menubutton-sort-asc-bg-image:      "./assets/images/sort-asc.png";
-$slimgrid-header-menubutton-sort-desc-bg-image:     "./assets/images/sort-desc.png";
+$slimgrid-header-menubutton-filtered-color:         #3490dc;
+$slimgrid-sort-indicator-color:                     #3490dc;
 
 // Grid Pager
-$slimgrid-pager-height:                             45px;
-$slimgrid-pager-padding:                            12px;
-$slimgrid-pager-bg-color:                           #ffffff;
-$slimgrid-pager-download-link-font-color:           #337ab7;
+$slimgrid-pager-height:                             40px;
+$slimgrid-pager-padding:                            11px;
+$slimgrid-pager-bg-color:                           #f8fafc;
+$slimgrid-pager-download-link-font-color:           #3490dc;
 $slimgrid-pager-download-link-text-decoration:      underline;
 
 // Context Menu

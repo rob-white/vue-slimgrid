@@ -11,34 +11,149 @@
   border-right: 1px solid $slimgrid-border-color !important;
   border-left: 1px solid $slimgrid-border-color !important;
   border-bottom: 1px solid $slimgrid-border-color !important;
+  border-top-left-radius: $slimgrid-border-radius;
+  border-top-right-radius: $slimgrid-border-radius;
 
   div {
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
   }
+
+  .text-center {
+    text-align: center;
+  }
 }
 
 .slick-viewport {
-  background-color: $slimgrid-bg-color !important;
+  background-color: $slimgrid-bg-color;
+
+  .grid-canvas {
+    position: relative;
+    outline: 0;
+  }
 }
 
 .slick-range-decorator {
   z-index: 9999;
-  cursor: cell !important;
-  border: $slimgrid-range-border !important;
+  cursor: cell;
+  border: $slimgrid-range-border;
 }
 
-.slick-cell.selected {
-  background-color: $slimgrid-cell-selected-bg-color !important;
-  color: $slimgrid-cell-selected-color !important;
+.slick-row {
+  &.ui-widget-content {
+    position: absolute;
+    border: 0px;
+    width: 100%;
+  }
+
+  &.ui-state-active {
+    position: absolute;
+    border: 0px;
+    width: 100%;
+    background: $slimgrid-cell-selected-bg-color;
+  }
+
+  .selected {
+    z-index: 10;
+    background-color: $slimgrid-cell-selected-bg-color;
+    color: $slimgrid-cell-selected-color;
+  }
+}
+
+.slick-group {
+  border-bottom: 2px solid $slimgrid-border-color;
+
+  .slick-cell {
+    text-align: left !important;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+.slick-group-toggle {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 5px;
+
+  &.expanded {
+    background: url(../assets/images/collapse.gif) no-repeat center center;
+  }
+
+  &.collapsed {
+    background: url(../assets/images/expand.gif) no-repeat center center;
+  }
+}
+
+.slick-group-totals {
+  color: $slimgrid-font-color;
+  background: $slimgrid-bg-color;
+}
+
+.slick-cell {
+  position: absolute;
+  border: 1px solid transparent;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  z-index: 1;
+  margin: 0;
+  white-space: nowrap;
+  padding: 1px 1px 0px 1px;
+  cursor: default;
+  border-right: 1px solid $slimgrid-border-color;
+  border-bottom-color: $slimgrid-border-color;
+  
+  img {
+    vertical-align: initial;
+  }
+
+  &.selected {
+    background-color: $slimgrid-cell-selected-bg-color;
+    color: $slimgrid-cell-selected-color;
+    span a {
+      color: #fff;
+    }
+  }
+
+  &.highlighted {
+    background: lightskyblue;
+    background: rgba(0, 0, 255, 0.2);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+
+  &.flashing {
+    border: 1px solid red;
+  }
+
+  &.editable {
+    z-index: 11;
+    overflow: visible;
+    background: white;
+    border-color: black;
+    border-style: solid;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.slick-selection {
+  z-index: 10;
+  position: absolute;
+  border: 2px dashed black;
 }
 
 .colored-cell {
   height: 95%;
   display: block;
   padding: 0px;
-  vertical-align: baseline;
   white-space: nowrap;
 }
 
@@ -47,61 +162,154 @@
 .slick-header {
   border-bottom: 1px solid $slimgrid-border-color;
   background-color: $slimgrid-header-bg-color;
-}
 
-.slick-header-menuitem {
-
-  .slick-header-menuicon {
-    &.sort-asc {
-      background-image: $slimgrid-header-menubutton-sort-asc-bg-image !important;
-    }
-
-    &.sort-desc {
-      background-image: $slimgrid-header-menubutton-sort-desc-bg-image !important;
-    }
-  }
-
-  &:hover {
-    border-color: #cccccc;
+  &.ui-state-default {
+    width: 100%;
+    overflow: hidden;
+    border-left: 0px;
   }
 }
 
-.slick-header-menubutton {
-  border-right: $slimgrid-border-color !important;
-  border-left: thin ridge $slimgrid-border-color !important;
-  width: $slimgrid-header-menubutton-width !important;
-  background-position: center !important;
-  background-image: $slimgrid-header-menubutton-bg-image !important;
-
-  &.filtered {
-    background-image: $slimgrid-header-menubutton-filtered-bg-image !important;
-  }
+.slick-resizable-handle {
+  position: absolute;
+  font-size: 0.1px;
+  display: block;
+  cursor: col-resize;
+  width: 4px;
+  right: 0px;
+  top: 0;
+  height: 100%;
 }
 
-.slick-header-column.ui-state-default {
-  border-right: 1px solid $slimgrid-border-color !important;
+.slick-reorder-proxy {
+  display: inline-block;
+  background: blue;
+  opacity: 0.15;
+  filter: alpha(opacity = 15);
+  cursor: move;
+}
+
+.slick-reorder-guide {
+  display: inline-block;
+  height: 2px;
+  background: blue;
+  opacity: 0.7;
+  filter: alpha(opacity = 70);
+}
+
+.slick-header-column-sorted {
+  font-style: italic;
+}
+
+.slick-header-column:hover > .slick-header-menubutton, 
+.slick-header-column-active .slick-header-menubutton {
+  display: inline-block;
 }
 
 .slick-header-column {
+  &.ui-state-default {
+    height: 25px;
+    line-height: 25px;
+    border-right: 1px solid $slimgrid-border-color;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    margin: 0;
+    padding: 4px;
+    border-left: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    float: left;
+  }
+
   .slick-sort-indicator-asc {
-    background: $slimgrid-header-sort-asc-bg
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 3px;
+    margin-top: 5px;
+    vertical-align: middle;
+    border-bottom: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    background-image: none;
+    color: $slimgrid-sort-indicator-color;
   }
 
   .slick-sort-indicator-desc {
-    background: $slimgrid-header-sort-desc-bg;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 3px;
+    margin-top: 5px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    background-image: none;
+    color: $slimgrid-sort-indicator-color;
   }
 }
 
+.slick-header-columns {
+  position: relative;
+  white-space: nowrap;
+  cursor: default;
+  overflow: hidden;
+  text-align: center;
+}
+
+.slick-column-name, 
+.slick-sort-indicator {
+  /**
+   * This makes all "float:right" elements after it that spill over to the next line
+   * display way below the lower boundary of the column thus hiding them.
+   */
+  display: inline-block;
+  margin-bottom: 100px;
+}
+
 .slick-headerrow {
-  background-color: $slimgrid-headerrow-bg-color;
+  background-color: #fff;
+
+  &.ui-state-default {
+    width: 100%;
+    overflow: hidden;
+    border-left: 0px;
+  }
 }
 
 .slick-headerrow-columns {
-  border-bottom: 1px solid $slimgrid-border-color !important;
+  border-bottom: 1px solid $slimgrid-border-color;
+  background-color: $slimgrid-headerrow-bg-color;
+  position: relative;
+  white-space: nowrap;
+  cursor: default;
+  overflow: hidden;
+  text-align: center;
 }
 
 .slick-headerrow-column input {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   min-height: $slimgrid-headerrow-input-height;
+  border: 1px solid $slimgrid-border-color;
+  border-radius: .25rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: 0;
+  padding-top: .2rem;
+  padding-bottom: 0.2rem;
+  padding-left: .5rem;
+  padding-right: 0.5rem;
+  color: $slimgrid-font-color;
 }
 
 .slick-headerrow-column.ui-state-default {
@@ -111,15 +319,34 @@
   border-bottom: 0px solid;
 }
 
-.slick-cell, .slick-headerrow-column {
+.slick-headerrow-column {
+  position: absolute;
+  border: 1px solid transparent;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  z-index: 1;
+  padding: 1px 2px 2px 1px;
+  margin: 0;
+  white-space: nowrap;
   cursor: default !important;
-  border-right: 1px solid $slimgrid-border-color !important;
-  border-bottom-color: $slimgrid-border-color !important;
+  border-right: 1px solid $slimgrid-border-color;
+  border-bottom-color: $slimgrid-border-color;
 }
 
-// Header Menu Styles
+// Header-Menu Styles
 .slick-header-menu {
-
+  background: #fff;
+  border: 1px solid #ddd;
+  min-width: 175px;
+  z-index: 100000;
+  cursor: default;
+  font-size: inherit;
+  position: absolute;
+  display: inline-block;
+  margin: 0;
+  padding: 2px;
   font-family: $slimgrid-font-family;
 
   label {
@@ -180,7 +407,106 @@
   }
 
   .filter {
+    border: 1px solid #BFBDBD;
+    height: 200px;
+    width: 200px;
+    margin-top: 6px;
     margin-bottom: 5px;
+    overflow: scroll;
+    padding: 4px;
+    white-space: nowrap;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 11px;
+    }
+  }
+}
+
+.slick-header-menuitem-disabled {
+  color: silver;
+}
+
+.slick-header-menuitem {
+  border: 1px solid transparent;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+      
+  .slick-header-menuicon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 4px;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &.sort-asc {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin-left: 2px;
+      margin-top: 2px;
+      vertical-align: middle;
+      border-bottom: 4px dashed;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent;
+    }
+
+    &.sort-desc {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin-left: 2px;
+      margin-top: 2px;
+      vertical-align: middle;
+      border-top: 4px dashed;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent;    
+    }
+  }
+
+  &:hover {
+    border-color: #cccccc;
+  }
+}
+
+.slick-header-menucontent {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: $slimgrid-font-size;
+}
+
+.slick-header-menubutton {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+  display: none;
+  border-right: $slimgrid-border-color;
+  border-left: 1px solid $slimgrid-border-color;
+  width: $slimgrid-header-menubutton-width;
+  background-image: none;
+  background-color:  $slimgrid-header-bg-color;
+
+  .caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 1px;
+    margin-top: 7px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+  }
+
+  &.filtered {
+    color: $slimgrid-header-menubutton-filtered-color;
   }
 }
 
@@ -196,6 +522,8 @@
   color: $slimgrid-font-color;
   font-size: $slimgrid-font-size;
   border: 1px solid $slimgrid-border-color;
+  border-bottom-left-radius: $slimgrid-border-radius;
+  border-bottom-right-radius: $slimgrid-border-radius;
   border-top: 0px;
   background: $slimgrid-pager-bg-color;
 
@@ -238,13 +566,14 @@
 }
 
 .slick-pager {
+  vertical-align: middle;
   width: auto;
   border: none;
   background: none;
   height: $slimgrid-pager-height;
 
   .slick-pager-nav {
-    display: none !important;
+    display: none;
   }
 
   .slick-pager-status,
@@ -252,9 +581,23 @@
   .slick-pager-download,
   .slick-pager-statistics,
   .slick-pager-settings {
-    font-size: $slimgrid-font-size !important;
-    padding: $slimgrid-pager-padding !important;
+    font-size: $slimgrid-font-size;
+    padding: $slimgrid-pager-padding;
     display: inline-block;
+  }
+
+  .slick-pager-settings {
+    float: right;
+
+    * {
+      vertical-align: middle;
+    }
+
+    a {
+      padding: 2px;
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 }
 
@@ -285,6 +628,39 @@
     &:hover {
       color: $slimgrid-context-menu-opt-hover-font-color;
       background-color: $slimgrid-context-menu-opt-hover-bg-color;
+    }
+  }
+}
+
+
+// Column Picker Styles
+.slick-columnpicker {
+  border: 1px solid #718BB7;
+  background: #f0f0f0;
+  padding: 6px;
+  -moz-box-shadow: 2px 2px 2px silver;
+  -webkit-box-shadow: 2px 2px 2px silver;
+  box-shadow: 2px 2px 2px silver;
+  min-width: 100px;
+  cursor: default;
+
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+  }
+
+  input {
+    margin: 4px;
+  }
+
+  li a {
+    display: block;
+    padding: 4px;
+    font-weight: bold;
+    &:hover {
+      background: white;
     }
   }
 }
