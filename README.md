@@ -17,7 +17,7 @@ npm i vue-slimgrid --save
 yarn add vue-slimgrid
 ```
 
-![Example](https://raw.githubusercontent.com/rob-white/vue-slimgrid/master/doc/example.png)
+![Example](https://raw.githubusercontent.com/rob-white/vue-slimgrid/master/doc/example2.png)
 
 ## Example.vue
 ```html
