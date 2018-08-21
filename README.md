@@ -58,7 +58,203 @@ export default {
 ```
 
 ## Available Props
-*To-Do*
+
+### pk
+> The name of the column from your data to use as the primary key.
+
+**Default:** ```id```
+
+**Example:**
+
+```html
+  <slim-grid pk="id"></slim-grid>
+```
+
+### data
+> The dataset to display in the grid.
+
+**Default:** ```[]```
+
+**Example:**
+
+```html
+  <slim-grid :data="[{'id': 0, 'col': 'value'}]"></slim-grid>
+```
+
+### columnOptions
+> Options that can be applied to each column in the grid to maniplulate how they act and display.
+
+**Default:** (applied for each column)
+
+```javascript
+{
+  // The position of the column in the header.
+  // Lower number (more left), Higher number (more right)
+  order: idx,
+
+  // Hide or show the column.
+  hidden: false,
+
+  // Hide or show the header filter for this column.
+  headerFilter: true,
+
+  // SlickGrid Column Option Defaults
+  // The documentation for SlickGrid specific options:
+  // https://github.com/mleibman/SlickGrid/wiki/Column-Options
+  id: columnName,
+  name: columnName,
+  field: columnName,
+  sortable: true,
+  resizable: true,
+  focusable: true,
+  selectable: true,
+  headerCssClass: null,
+  minWidth: 30,
+  cssClass: "text-center",
+  defaultSortAsc: true,
+  formatter(row, cell, value, columnDef, dataContext) {
+    return value;
+  }
+}
+```
+> Note: The pk column is set as ```hidden: true``` and ```order: -1``` by default.
+
+**Example:**
+
+```html
+  <style lang="text/css">
+    .disabled {
+      height: 95%;
+      display: block;
+      padding: 0px;
+      white-space: nowrap;
+      text-align: center;
+      background-color: #8795A1;
+      color: #ffffff;
+    }
+  </style>
+
+  <template>
+    <slim-grid :column-options="columnOptions"></slim-grid>
+  </template>
+
+  <script>
+    export default {
+      data: () => ({
+        data: ['id': 1, 'col1': 'value', 'col2': 'value']
+        columnOptions: {
+          
+          // Options applied to all columns.
+          '*': {
+            // ...
+          },
+
+          // Options only applied to 'col1'.
+          'col1': {
+            name: ''
+            hidden: false,
+            sortable: false,
+            resizable: false,
+            focusable: false,
+            selectable: false,
+            headerFilter: false,
+            formatter(row, cell, value) {
+              return `
+                <span class="disabled">
+                  ${value}
+                </span>
+              `;
+            }
+          }
+
+        }
+      })
+    }
+  </script>
+```
+
+### explicitColumns
+> An array of column names that will be used when rendering the grid instead of auto-generating them from the provided data. *Helpful when needing to show columns if the data is empty.*
+
+**Default:** ```[]```
+
+**Example:**
+
+```html
+  <slim-grid :explicit-columns="['col1', 'col2']"></slim-grid>
+```
+
+### height
+> The height in ```px``` to display the grid.
+
+**Default:** ```600```
+
+**Example:**
+
+```html
+  <slim-grid :height="200"></slim-grid>
+```
+
+### selectionModel
+> The SlickGrid selection model to use when rendering the grid.
+
+**Default:** ```Slick.CellSelectionModel()```
+
+**Example:**
+```html
+  <template>
+    <slim-grid :selection-model="selectionModel"></slim-grid>
+  </template>
+
+  <script>
+    import { Slick } from 'slickgrid-es6';
+
+    export default {
+      data: () => ({
+        selectionModel() {
+          return new Slick.RowSelectionModel();
+        }
+      })
+    }
+  </script>
+```
+
+### customPlugins
+> To-Do Documentation
+
+### rowFormatter
+> To-Do Documentation
+
+### sort
+> To-Do Documentation
+
+### grouping
+> To-Do Documentation
+
+### contextMenuOptions
+> To-Do Documentation
+
+### downloadable
+> Show or hide the ability to download the raw/filtered data as csv in the pager.
+
+**Default:** ```true```
+
+**Example:**
+
+```html
+  <slim-grid :downloadable="false"></slim-grid>
+```
+
+### showPagerStats
+> Show or hide the selection statistics in the pager.
+
+**Default:** ```true```
+
+**Example:**
+
+```html
+  <slim-grid :show-pager-stats="false"></slim-grid>
+```
 
 ## Available Events
 *To-Do*
