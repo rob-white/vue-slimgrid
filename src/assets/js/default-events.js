@@ -54,7 +54,7 @@ export default {
       before() {
         $("html").css({ cursor: "" });
 
-        return { row: this.getSelectedRows()};
+        return { row: this.getSelectedRows() };
       },
       on(e, args) {
         this.$emit("grid-dbl-click", e, args);
@@ -160,7 +160,7 @@ export default {
         var columns = args.grid.getColumns();
         var item = args["item"];
 
-        // For each column we have, check to see if we had a value added for it
+        // For each column we have, check to see if we had a value added for it.
         _.forEach(columns, function(col) {
           row[col["id"]] = item.hasOwnProperty(col["id"]) ? item[col["id"]] : null;
         });
