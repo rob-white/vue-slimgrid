@@ -1,35 +1,35 @@
 export default {
-  data(data) {
+  data() {
     this.setData();
   },
-  grouping(grouping) {
+  grouping() {
     this.setDataViewGrouping();
   },
   filters: {
-    handler(value) {
+    handler() {
       this.setFilters();
     },
     deep: true
   },
   columnOptions: {
-    handler(value) {
+    handler() {
       this.generateColumns();
     },
     deep: true
   },
   slickGridOptions: {
-    handler(value) {
+    handler() {
       this.setOptions();
     },
     deep: true
   },
-  explicitColumns(columns) {
+  explicitColumns() {
     this.generateColumns();
   },
-  columns(columns) {
+  columns() {
     this.setColumns();
   },
-  selectionModel(selectionModel) {
+  selectionModel() {
     this.setSelectionModel();
   }
 };

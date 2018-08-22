@@ -42,7 +42,7 @@ export default {
   },
   rowFormatter: {
     type: Function,
-    default: function(row, dataView) {
+    default: function(row) {
       return row;
     }
   },

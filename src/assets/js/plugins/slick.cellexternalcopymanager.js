@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import $ from "jquery";
 import { Slick } from "slickgrid-es6";
 

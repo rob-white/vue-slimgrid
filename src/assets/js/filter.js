@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export default Filter;
 
 // Author: ghiscoding

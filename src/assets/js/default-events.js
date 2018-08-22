@@ -39,7 +39,7 @@ export default {
       }
     },
     onClick: {
-      before(e, args) {
+      before() {
         $("html").css({ cursor: "" });
 
         return {
@@ -51,7 +51,7 @@ export default {
       }
     },
     onDblClick: {
-      before(e, args) {
+      before() {
         $("html").css({ cursor: "" });
 
         return { row: this.getSelectedRows()};
@@ -262,7 +262,7 @@ export default {
       on(args) {
         this.$emit("context-menu-option-selected", args);
       },
-      after(args) {
+      after() {
         this.contextMenu.show = false;
       }
     }
@@ -273,7 +273,7 @@ export default {
       on(e, args) {
         this.$emit("row-count-changed", e, args);
       },
-      after(e, args) {
+      after() {
         this.slickGrid.updateRowCount();
         this.slickGrid.render();
       }

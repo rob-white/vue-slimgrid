@@ -99,9 +99,8 @@ export default {
    * ...
    */
   createDataView() {
-    this.dataView = new Slick.Data.DataView({
-      groupItemMetadataProvider: this.plugins.groupItemMetaDataProvider.plugin
-    });
+    let provider = this.plugins.groupItemMetaDataProvider.plugin;
+    this.dataView = new Slick.Data.DataView({ groupItemMetadataProvider: provider});
 
     this.dataView.getItemMetadata = row => {
       let item = this.dataView.getItem(row);
@@ -111,12 +110,12 @@ export default {
 
       // Overrides for grouping rows.
       if (item.__group) {
-        return groupItemMetadataProvider.getGroupRowMetadata(item);
+        return provider.getGroupRowMetadata(item);
       }
 
       // Overrides for grouping total rows.
       if (item.__groupTotals) {
-        return groupItemMetadataProvider.getTotalsRowMetadata(item);
+        return provider.getTotalsRowMetadata(item);
       }
 
       return this.rowFormatter(item, this.dataView);
@@ -171,7 +170,7 @@ export default {
 
     // Register any plugin events.
     const pluginEvents = _(this.plugins)
-      .pickBy((plugin, key) => {
+      .pickBy(plugin => {
         return plugin.hasOwnProperty("events");
       })
       .map(plugin => {
@@ -230,7 +229,7 @@ export default {
    */
   registerHeaderInputEvent() {
     let $vm = this;
-    $($vm.slickGrid.getHeaderRow()).delegate(":input", "change keyup", function(e) {
+    $($vm.slickGrid.getHeaderRow()).delegate(":input", "change keyup", function() {
       const columnId = $(this).data("columnId");
 
       if (!columnId) return;
@@ -419,7 +418,7 @@ export default {
       minWidth: 30,
       cssClass: "text-center",
       defaultSortAsc: true,
-      formatter(row, cell, value, columnDef, dataContext) {
+      formatter(row, cell, value) {
         return value;
       }
     };
