@@ -220,7 +220,55 @@ export default {
 ```
 
 ### customPlugins
-> To-Do Documentation
+> Add, register, and enable events for custom SlickGrid plugins with the instance.
+
+**Default:** ```{}```
+
+**Example:**
+```html
+<template>
+  <slim-grid :custom-plugins="customPlugins"></slim-grid>
+</template>
+
+<script>
+  export default {
+    data: () => ({
+      customPlugins: {
+        
+        // Each plugin will have a key (its name) and some options via it's value.
+        examplePlugin: {
+          // Whether or not the plugin should be "registered" with the SlickGrid instance.
+          register: true,
+
+          // The plugin that you want to add.
+          plugin: new ExamplePlugin({}),
+
+          // Any events you want to enable.
+          // Note: If you don't want to use any events or the plugin
+          // doesn't provide any, just exclude the "events" key.
+          events: {
+
+            onSomeAvailableEvent: {
+              // The "before" and "after" keys can be excluded if you don't want to use them.
+              before(e, args) {
+                // Do something "before" the event is fired.
+              },
+              on(e, args) {
+                // Do something "on" this event being fired.
+              },
+              after(e, args) {
+                // Do something "after" the event is fired.
+              }
+            }
+
+          }
+        }
+
+      }
+    })
+  }
+</script>
+```
 
 ### rowFormatter
 > To-Do Documentation
