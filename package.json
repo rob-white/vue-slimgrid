@@ -1,6 +1,6 @@
 {
   "name": "vue-slimgrid",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "main": "dist/slimgrid.common.js",
   "module": "index.js",
   "scripts": {
