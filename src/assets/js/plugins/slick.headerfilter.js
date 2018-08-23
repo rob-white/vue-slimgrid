@@ -41,16 +41,17 @@ function HeaderFilter(options) {
     $(document.body).unbind("mousedown", handleBodyMouseDown);
   }
 
-  function hideMenu() {
+  function hideMenu(e) {
     if ($menu) {
       $menu.remove();
       $menu = null;
+      self.onFilterHidden.notify({ grid: grid }, e, self);
     }
   }
 
   function handleBodyMouseDown(e) {
     if ($menu && $menu[0] != e.target && !$.contains($menu[0], e.target)) {
-      hideMenu();
+      hideMenu(e);
     }
   }
 
@@ -137,10 +138,13 @@ function HeaderFilter(options) {
   }
 
   function showFilter(e) {
-    e.stopPropagation();
     var $menuButton = $(this),
-      columnDef = $menuButton.data("column"),
-      filterItems;
+    columnDef = $menuButton.data("column"),
+    filterItems;
+
+    self.onFilterShown.notify({ grid: grid, column: columnDef }, e, self);
+
+    e.stopPropagation();
 
     columnDef.filterValues = columnDef.filterValues || [];
 
@@ -202,7 +206,7 @@ function HeaderFilter(options) {
         handleApply(ev, columnDef);
       });
 
-    $('<button>Cancel</button>')
+    $('<button style="float: right">Cancel</button>')
       .appendTo($menu)
       .bind("click", hideMenu);
 
@@ -227,8 +231,8 @@ function HeaderFilter(options) {
     $menu.css("top", top).css("left", left > 0 ? left : 0);
   }
 
-  function columnsResized() {
-    hideMenu();
+  function columnsResized(e) {
+    hideMenu(e);
   }
 
   function changeWorkingFilter(filterItems, workingFilters, $checkbox) {
@@ -269,7 +273,7 @@ function HeaderFilter(options) {
   }
 
   function handleApply(e, columnDef) {
-    hideMenu();
+    hideMenu(e);
 
     self.onFilterApplied.notify({ grid: grid, column: columnDef }, e, self);
 
@@ -343,7 +347,7 @@ function HeaderFilter(options) {
     var command = $(this).data("command"),
       columnDef = $(this).data("column");
 
-    hideMenu();
+    hideMenu(e);
 
     self.onCommand.notify(
       {
@@ -362,6 +366,8 @@ function HeaderFilter(options) {
   $.extend(this, {
     init: init,
     destroy: destroy,
+    onFilterShown: new Slick.Event(),
+    onFilterHidden: new Slick.Event(),
     onFilterApplied: new Slick.Event(),
     onCommand: new Slick.Event()
   });
