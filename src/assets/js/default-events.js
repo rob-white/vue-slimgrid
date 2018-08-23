@@ -4,11 +4,17 @@ import _ from "lodash";
 export default {
   slickGrid: {
     onHeaderContextMenu: {
+      before() {
+        $("html").css({ cursor: "" }); // Hack to fix interact cursor getting stuck...
+      },
       on(e, args) {
         this.$emit("header-context-menu", e, args);
       }
     },
     onHeaderClick: {
+      before() {
+        $("html").css({ cursor: "" }); // Hack to fix interact cursor getting stuck...
+      },
       on(e, args) {
         this.$emit("header-click", e, args);
       }
@@ -40,8 +46,6 @@ export default {
     },
     onClick: {
       before() {
-        $("html").css({ cursor: "" });
-
         return {
           row: this.getSelectedRows()
         };
@@ -52,9 +56,9 @@ export default {
     },
     onDblClick: {
       before() {
-        $("html").css({ cursor: "" });
-
-        return { row: this.getSelectedRows() };
+        return {
+          row: this.getSelectedRows()
+        };
       },
       on(e, args) {
         this.$emit("grid-dbl-click", e, args);
@@ -199,10 +203,11 @@ export default {
     },
     onContextMenu: {
       before(e, args) {
-        $("html").css({ cursor: "" });
         e.preventDefault();
 
-        return { cell: args.grid.getCellFromEvent(e) };
+        return {
+          cell: args.grid.getCellFromEvent(e)
+        };
       },
       on(e, args) {
         this.$emit("context-menu", e, args);
