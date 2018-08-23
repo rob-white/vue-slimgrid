@@ -20,7 +20,7 @@
     "grid"
   ],
   "peerDependencies": {
-    "vue": "^2.5.16"
+    "vue": "^2.0.0"
   },
   "dependencies": {
     "json2csv": "^4.2.1",
