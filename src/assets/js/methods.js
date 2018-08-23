@@ -1,7 +1,7 @@
 import $ from "jquery";
 import _ from "lodash";
 import Filter from "./filter";
-import { Slick } from "slickgrid-es6";
+import { Data, Grid } from "slickgrid-es6";
 
 export default {
   /**
@@ -100,7 +100,7 @@ export default {
    */
   createDataView() {
     let provider = this.plugins.groupItemMetaDataProvider.plugin;
-    this.dataView = new Slick.Data.DataView({ groupItemMetadataProvider: provider});
+    this.dataView = new Data.DataView({ groupItemMetadataProvider: provider});
 
     this.dataView.getItemMetadata = row => {
       let item = this.dataView.getItem(row);
@@ -134,7 +134,7 @@ export default {
    * Creates the underlying SlickGrid instance and sets the selection model.
    */
   createSlickGrid() {
-    this.slickGrid = new Slick.Grid(
+    this.slickGrid = new Grid(
       this.$refs.grid,
       this.dataView,
       this.columns,

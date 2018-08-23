@@ -5,12 +5,11 @@
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
-  color: $slimgrid-font-color !important;
-  font-size: $slimgrid-font-size !important;
-  border-top: 1px solid $slimgrid-border-color !important;
-  border-right: 1px solid $slimgrid-border-color !important;
-  border-left: 1px solid $slimgrid-border-color !important;
-  border-bottom: 1px solid $slimgrid-border-color !important;
+  color: $slimgrid-font-color;
+  border-top: 1px solid $slimgrid-border-color;
+  border-right: 1px solid $slimgrid-border-color;
+  border-left: 1px solid $slimgrid-border-color;
+  border-bottom: 1px solid $slimgrid-border-color;
   border-top-left-radius: $slimgrid-border-radius;
   border-top-right-radius: $slimgrid-border-radius;
 
@@ -257,7 +256,7 @@
   }
 
   .slick-sort-indicator-asc {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     display: inline-block;
     width: 0;
     height: 0;
@@ -269,10 +268,11 @@
     border-left: 4px solid transparent;
     background-image: none;
     color: $slimgrid-sort-indicator-color;
+    float: left;
   }
 
   .slick-sort-indicator-desc {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     display: inline-block;
     width: 0;
     height: 0;
@@ -284,6 +284,7 @@
     border-left: 4px solid transparent;
     background-image: none;
     color: $slimgrid-sort-indicator-color;
+    float: left;
   }
 }
 
@@ -302,7 +303,6 @@
    * display way below the lower boundary of the column thus hiding them.
    */
   display: inline-block;
-  margin-bottom: 100px;
 }
 
 .slick-headerrow {

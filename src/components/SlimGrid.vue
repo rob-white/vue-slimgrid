@@ -10,16 +10,19 @@
                     :data-view="dataView"
                     :downloadable="downloadable"
                     :show-stats="showPagerStats"
-                    :stats="pagerStats"></slim-pager>
+                    :stats="pagerStats"
+        ></slim-pager>
         <slim-context-menu :show="contextMenu.show"
                            :top="contextMenu.top"
                            :left="contextMenu.left"
                            :options="contextMenu.options"
-                           @option-selected="contextMenuOptionSelected"></slim-context-menu>
+                           @option-selected="contextMenuOptionSelected"
+        ></slim-context-menu>
     </div>
 </template>
 
 <script>
+import $ from "jquery";
 import _ from "lodash";
 import SlimPager from "./SlimPager.vue";
 import SlimContextMenu from "./SlimContextMenu.vue";
@@ -27,10 +30,9 @@ import defaultEvents from "../assets/js/default-events";
 import props from "../assets/js/props";
 import watches from "../assets/js/watches";
 import methods from "../assets/js/methods";
-import { Slick } from "slickgrid-es6";
+import { Slick, Data } from "slickgrid-es6";
 import HeaderFilter from "../assets/js/plugins/slick.headerfilter";
 import CellExternalCopyManager from "../assets/js/plugins/slick.cellexternalcopymanager";
-import GroupItemMetadataProvider from "../assets/js/plugins/slick.groupitemmetadataprovider";
 
 export default {
   props: props,
@@ -47,7 +49,7 @@ export default {
       defaultPlugins: {
         groupItemMetaDataProvider: {
           register: true,
-          plugin: new GroupItemMetadataProvider({})
+          plugin: new Data.GroupMetaDataProvider({})
         },
         cellExternalCopyManager: {
           register: true,
@@ -107,10 +109,12 @@ export default {
           register: true,
           plugin: new HeaderFilter({}),
           events: {
+            onFilterShown: {
+              on(e, args) {
+                $("html").css({ cursor: "" }); // Hack to fix interact cursor getting stuck...
+              }
+            },
             onFilterApplied: {
-              before(e, args) {
-                //
-              },
               on(e, args) {
                 //
               },
@@ -122,15 +126,9 @@ export default {
               }
             },
             onCommand: {
-              before(e, args) {
-                //
-              },
               on(e, args) {
                 args.sortCols = [args.column];
                 this.sort(e, args);
-              },
-              after(e, args) {
-                //
               }
             }
           }

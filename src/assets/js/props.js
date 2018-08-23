@@ -1,4 +1,4 @@
-import { Slick } from "slickgrid-es6";
+import { Plugins } from "slickgrid-es6";
 
 export default {
   // SlimGrid Props
@@ -31,7 +31,7 @@ export default {
   selectionModel: {
     type: Object,
     default() {
-      return new Slick.CellSelectionModel();
+      return new Plugins.CellSelectionModel();
     }
   },
   customPlugins: {
