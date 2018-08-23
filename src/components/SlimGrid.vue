@@ -110,12 +110,12 @@ export default {
           plugin: new HeaderFilter({}),
           events: {
             onFilterShown: {
-              on(e, args) {
+              on() {
                 $("html").css({ cursor: "" }); // Hack to fix interact cursor getting stuck...
               }
             },
             onFilterApplied: {
-              on(e, args) {
+              on() {
                 //
               },
               after(e, args) {
