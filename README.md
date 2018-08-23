@@ -26,7 +26,7 @@ yarn add vue-slimgrid
 
 
 ```html
-<style src="../node_modules/vue-slimgrid/dist/slimgrid.css"></style>
+<style src="vue-slimgrid/dist/slimgrid.css"></style>
 
 <template>
     <slim-grid :data="data"></slim-grid>
@@ -88,8 +88,13 @@ export default {
 
 ```javascript
 {
-  // The position of the column in the header.
+  // The position of the column in the header relative to others.
   // Lower number (more left), Higher number (more right)
+  //
+  // You can also provide a function rather than a number:
+  // order(column) {
+  //   return column.id == 'col1' ? -1 : 0;
+  // },
   order: idx,
 
   // Hide or show the column.
@@ -231,16 +236,19 @@ export default {
 </template>
 
 <script>
+  import SlimGrid from 'vue-slimgrid';
+
   export default {
+    components: { SlimGrid },
     data: () => ({
       customPlugins: {
         
-        // Each plugin will have a key (its name) and some options via it's value.
+        // Each plugin will have a key (its name) and an object of options (its value).
         examplePlugin: {
           // Whether or not the plugin should be "registered" with the SlickGrid instance.
           register: true,
 
-          // The plugin that you want to add.
+          // An instantiation of the plugin that you want to add.
           plugin: new ExamplePlugin({}),
 
           // Any events you want to enable.

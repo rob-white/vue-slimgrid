@@ -93,7 +93,10 @@
 
 .slick-cell {
   position: absolute;
-  border: 1px solid transparent;
+  border-right: 1px solid $slimgrid-border-color;
+  border-left: 1px solid transparent;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid $slimgrid-border-color;
   overflow: hidden;
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
@@ -103,8 +106,6 @@
   white-space: nowrap;
   padding: 1px 1px 0px 1px;
   cursor: default;
-  border-right: 1px solid $slimgrid-border-color;
-  border-bottom-color: $slimgrid-border-color;
   
   img {
     vertical-align: initial;
@@ -207,6 +208,37 @@
 }
 
 .slick-header-column {
+
+  .slick-header-menubutton {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+    display: none;
+    border-right: $slimgrid-border-color;
+    border-left: 1px solid $slimgrid-border-color;
+    width: $slimgrid-header-menubutton-width;
+    background-image: none;
+    background-color:  $slimgrid-header-bg-color;
+  
+    .caret {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin-left: 1px;
+      margin-top: 7px;
+      vertical-align: middle;
+      border-top: 4px dashed;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent;
+    }
+  
+    &.filtered {
+      color: $slimgrid-header-menubutton-filtered-color;
+    }
+  }
+
   &.ui-state-default {
     height: 25px;
     line-height: 25px;
@@ -311,27 +343,21 @@
   color: $slimgrid-font-color;
 }
 
-.slick-headerrow-column.ui-state-default {
-  padding: 3px;
-  border-left: 0px solid;
-  border-top: 0px solid;
-  border-bottom: 0px solid;
-}
-
 .slick-headerrow-column {
   position: absolute;
-  border: 1px solid transparent;
+  border-right: 1px solid $slimgrid-border-color;
+  border-left: 0px;
+  border-top: 0px;
+  border-bottom: 0px;
   overflow: hidden;
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   vertical-align: middle;
   z-index: 1;
-  padding: 1px 2px 2px 1px;
+  padding: 3px;
   margin: 0;
   white-space: nowrap;
   cursor: default !important;
-  border-right: 1px solid $slimgrid-border-color;
-  border-bottom-color: $slimgrid-border-color;
 }
 
 // Header-Menu Styles
@@ -346,7 +372,7 @@
   position: absolute;
   display: inline-block;
   margin: 0;
-  padding: 4px;
+  padding: 4px !important;
   font-family: $slimgrid-font-family;
 
   label {
@@ -405,17 +431,6 @@
     padding-top: .5rem;
     padding-bottom: .5rem;
     width: 100%;
-
-    // display: block;
-    // margin-left: 2px;
-    // width: 183px !important;
-    // border-radius: 0;
-    // color: #555555;
-    // padding: 6px 12px;
-    // font-size: $slimgrid-font-size;
-    // line-height: 1.428571429;
-    // background-color: #fff;
-    // border: 1px solid #ccc;
   }
 
   .filter {
@@ -492,36 +507,6 @@
   vertical-align: middle;
   margin: 5px;
   font-size: $slimgrid-font-size;
-}
-
-.slick-header-menubutton {
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  cursor: pointer;
-  display: none;
-  border-right: $slimgrid-border-color;
-  border-left: 1px solid $slimgrid-border-color;
-  width: $slimgrid-header-menubutton-width;
-  background-image: none;
-  background-color:  $slimgrid-header-bg-color;
-
-  .caret {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: 1px;
-    margin-top: 7px;
-    vertical-align: middle;
-    border-top: 4px dashed;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
-  }
-
-  &.filtered {
-    color: $slimgrid-header-menubutton-filtered-color;
-  }
 }
 
 
