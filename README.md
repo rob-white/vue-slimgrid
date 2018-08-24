@@ -301,6 +301,17 @@ export default {
   <slim-grid :downloadable="false"></slim-grid>
 ```
 
+### showPager
+> Show or hide the pager at the bottom of the grid.
+
+**Default:** ```true```
+
+**Example:**
+
+```html
+  <slim-grid :show-pager="false"></slim-grid>
+```
+
 ### showPagerStats
 > Show or hide the selection statistics in the pager.
 
