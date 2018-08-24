@@ -3,8 +3,8 @@
 </style>
 
 <template>
-    <div @click="contextMenu.show = false">
-        <div class="slim-grid" :style="{ height: height + 'px' }" ref="grid"></div>
+    <div :style="{ height: height + 'px' }" @click="contextMenu.show = false">
+        <div class="slim-grid" ref="grid"></div>
         <slim-pager v-if="showPager"
                     :grid-rendered="rendered"
                     :slick-grid="slickGrid"

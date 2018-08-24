@@ -88,16 +88,25 @@ export default {
 
 ```javascript
 {
-  // The position of the column in the header relative to others.
-  // Lower number (more left), Higher number (more right)
-  //
-  // You can also provide a function rather than a number:
-  // order(column) {
-  //   return column.id == 'col1' ? -1 : 0;
-  // },
+  /**
+   * The position of the column in the header relative to others.
+   * Lower number (more left), Higher number (more right)
+   * 
+   * You can also provide a function rather than a number:
+   * order(column) {
+   *     return column.id == 'col1' ? -1 : 0;
+   * }
+   */
   order: idx,
 
-  // Hide or show the column.
+  /**
+   * Show or hide the column.
+   * 
+   * You can also provide a function rather than a boolean:
+   * hidden(column) {
+   *     return column.id == 'col1' ? true : false;
+   * }
+   */
   hidden: false,
 
   // Hide or show the header input field for this column.
@@ -106,9 +115,13 @@ export default {
   // Hide or show the header filter for this column.
   headerFilter: true,
 
-  // SlickGrid Column Option Defaults
-  // The documentation for SlickGrid specific options:
-  // https://github.com/mleibman/SlickGrid/wiki/Column-Options
+  /**
+   * SlickGrid Column Option Defaults
+   * Lower number (more left), Higher number (more right)
+   * 
+   * The documentation for SlickGrid specific options:
+   * https://github.com/mleibman/SlickGrid/wiki/Column-Options
+   */
   id: columnName,
   name: columnName,
   field: columnName,
@@ -216,12 +229,12 @@ export default {
   </template>
 
   <script>
-    import { Slick } from 'slickgrid-es6';
+    import { Plugins } from 'slickgrid-es6';
 
     export default {
       data: () => ({
         selectionModel() {
-          return new Slick.RowSelectionModel();
+          return new Plugins.RowSelectionModel();
         }
       })
     }

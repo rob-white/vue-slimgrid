@@ -96,10 +96,6 @@ export default {
       default: false
   },
 
-  //showCheckboxes: {
-  //    type: Boolean,
-  //    default: false
-  //},
   //copyable: {
   //    type: Boolean,
   //    default: false

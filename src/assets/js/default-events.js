@@ -142,8 +142,6 @@ export default {
     onHeaderRowCellRendered: {
       before(e, args) {
         if (args.column.id === "_checkbox_selector" || !args.column.headerInput) {
-          $("<div style='height: " + this.headerRowHeight + "px'></div>")
-               .appendTo(args.node);
             return;
         }
 
