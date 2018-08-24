@@ -229,7 +229,7 @@ export default {
 ```
 
 ### customPlugins
-> Add, register, and enable events for custom SlickGrid plugins with the instance.
+> Add, register, and enable events for custom SlickGrid plugins.
 
 **Default:** ```{}```
 
