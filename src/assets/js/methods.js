@@ -413,6 +413,7 @@ export default {
       resizable: true,
       focusable: true,
       selectable: true,
+      headerInput: true,
       headerFilter: true,
       headerCssClass: null,
       minWidth: 30,

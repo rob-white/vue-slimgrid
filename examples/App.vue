@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <slim-grid :data="data" :height="500"></slim-grid>
+    <slim-grid :column-options="columnOptions" :data="data" :height="500"></slim-grid>
   </div>
 </template>
 
@@ -10,7 +10,14 @@ import SlimGrid from "../src/components/SlimGrid.vue";
 export default {
   components: { SlimGrid },
   data: () => ({
-    data: []
+    data: [],
+    columnOptions: {
+      'column-0': {
+        headerInput: false,
+        headerFilter: false,
+        sortable: false
+      }
+    }
   }),
   mounted() {
     var data = [];

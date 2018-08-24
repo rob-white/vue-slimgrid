@@ -100,6 +100,9 @@ export default {
   // Hide or show the column.
   hidden: false,
 
+  // Hide or show the header input field for this column.
+  headerInput: true,
+
   // Hide or show the header filter for this column.
   headerFilter: true,
 
@@ -156,12 +159,13 @@ export default {
 
           // Options only applied to 'col1'.
           'col1': {
-            name: ''
+            name: '',
             hidden: false,
             sortable: false,
             resizable: false,
             focusable: false,
             selectable: false,
+            headerInput: false,
             headerFilter: false,
             formatter(row, cell, value) {
               return `

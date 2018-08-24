@@ -141,11 +141,10 @@ export default {
     },
     onHeaderRowCellRendered: {
       before(e, args) {
-        if (args.column.id === "_checkbox_selector") {
-          $("<input style='display: none;' type='text'>")
-            .data("columnId", args.column.id)
-            .val(this.filters[args.column.id])
-            .appendTo(args.node);
+        if (args.column.id === "_checkbox_selector" || !args.column.headerInput) {
+          $("<div style='height: " + this.headerRowHeight + "px'></div>")
+               .appendTo(args.node);
+            return;
         }
 
         $(args.node).empty();
