@@ -5,7 +5,8 @@
 <template>
     <div @click="contextMenu.show = false">
         <div class="slim-grid" :style="{ height: height + 'px' }" ref="grid"></div>
-        <slim-pager :grid-rendered="rendered"
+        <slim-pager v-if="showPager"
+                    :grid-rendered="rendered"
                     :slick-grid="slickGrid"
                     :data-view="dataView"
                     :downloadable="downloadable"
@@ -163,7 +164,7 @@ export default {
       return {
         // Hard-coded since it's required for initializing SlickGrid after all setup.
         explicitInitialization: true,
-        // Hard-coded due to nasty bug with using interact.js instead of jQuery.
+        // Hard-coded due to nasty bug with using interact.js I can't figure out.
         enableColumnReorder: false,
         asyncEditorLoading: this.asyncEditorLoading,
         asyncEditorLoadDelay: this.asyncEditorLoadDelay,

@@ -83,19 +83,19 @@ export default {
     type: Boolean,
     default: true
   },
+  showPager: {
+    type: Boolean,
+    default: true
+  },
   showPagerStats: {
     type: Boolean,
     default: true
   },
-  // pasteExactOnly: {
-  //     type: Boolean,
-  //     default: false
-  // },
+  pasteExactOnly: {
+      type: Boolean,
+      default: false
+  },
 
-  //showColumnpicker: {
-  //    type: Boolean,
-  //    default: false
-  //},
   //showCheckboxes: {
   //    type: Boolean,
   //    default: false
