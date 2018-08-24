@@ -22,7 +22,7 @@ yarn add vue-slimgrid
 ```
 
 ## Example.vue
-![Example](https://raw.githubusercontent.com/rob-white/vue-slimgrid/master/doc/example.png)
+![Example](https://raw.githubusercontent.com/rob-white/vue-slimgrid/master/doc/example.png?v)
 
 
 ```html
