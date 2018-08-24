@@ -225,7 +225,7 @@
       display: inline-block;
       width: 0;
       height: 0;
-      margin-left: 1px;
+      margin-left: 0px;
       margin-top: 7px;
       vertical-align: middle;
       border-top: 4px dashed;
@@ -630,39 +630,6 @@
     &:hover {
       color: $slimgrid-context-menu-opt-hover-font-color;
       background-color: $slimgrid-context-menu-opt-hover-bg-color;
-    }
-  }
-}
-
-
-// Column Picker Styles
-.slick-columnpicker {
-  border: 1px solid #718BB7;
-  background: #f0f0f0;
-  padding: 6px;
-  -moz-box-shadow: 2px 2px 2px silver;
-  -webkit-box-shadow: 2px 2px 2px silver;
-  box-shadow: 2px 2px 2px silver;
-  min-width: 100px;
-  cursor: default;
-
-  li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    background: none;
-  }
-
-  input {
-    margin: 4px;
-  }
-
-  li a {
-    display: block;
-    padding: 4px;
-    font-weight: bold;
-    &:hover {
-      background: white;
     }
   }
 }

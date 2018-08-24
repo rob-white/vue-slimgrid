@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <slim-grid :column-options="columnOptions" :data="data" :height="500"></slim-grid>
+    <slim-grid :context-menu-options="contextMenuOptions" 
+               :column-options="columnOptions" 
+               :data="data" 
+               :height="500"
+    ></slim-grid>
   </div>
 </template>
 
@@ -11,6 +15,9 @@ export default {
   components: { SlimGrid },
   data: () => ({
     data: [],
+    contextMenuOptions: [
+      { label: 'Option1' }
+    ],
     columnOptions: {
       'column-0': {
         headerInput: false,
