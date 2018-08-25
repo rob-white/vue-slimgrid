@@ -608,20 +608,31 @@
 // Context Menu Styles
 .slim-context-menu {
   position: absolute;
+  margin: 0;
   color: $slimgrid-font-color;
   background: $slimgrid-context-menu-bg-color;
   border: 1px solid $slimgrid-context-menu-border-color;
-  padding: 2px;
+  padding: 0px;
   display: inline-block;
-  min-width: 100px;
+  min-width: 130px;
+  border-radius: .25rem;
   -moz-box-shadow: $slimgrid-context-menu-shadow;
   -webkit-box-shadow: $slimgrid-context-menu-shadow;
   z-index: 99999;
+  font-size: $slimgrid-font-size;
+  font-family: $slimgrid-font-family;
 
   .slim-context-menu-option {
-    padding: 4px 4px 4px 4px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    margin: .5rem;
+
     list-style: none;
     cursor: pointer;
+    border-radius: .25rem;
+    border: 1px solid transparent;
 
     &.disabled {
       cursor: default;
@@ -630,8 +641,8 @@
     }
 
     &:hover {
-      color: $slimgrid-context-menu-opt-hover-font-color;
-      background-color: $slimgrid-context-menu-opt-hover-bg-color;
+      color: $slimgrid-font-color;
+      border: $slimgrid-context-menu-opt-hover-border;
     }
   }
 }

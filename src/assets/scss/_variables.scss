@@ -25,10 +25,10 @@ $slimgrid-pager-download-link-font-color:           #3490dc;
 $slimgrid-pager-download-link-text-decoration:      underline;
 
 // Context Menu
-$slimgrid-context-menu-border-color:                #e6e9ed;
-$slimgrid-context-menu-bg-color:                    #ffffff;
-$slimgrid-context-menu-shadow:                      2px 2px 2px #e6e9ed;
+$slimgrid-context-menu-border-color:                #dae1e7;
+$slimgrid-context-menu-bg-color:                    #f8fafc;
+$slimgrid-context-menu-shadow:                      0 2px 4px 0 rgba(0, 0, 0, 0.1);
 $slimgrid-context-menu-opt-disabled-font-color:     #c5c5c5;
 $slimgrid-context-menu-opt-disabled-bg-color:       $slimgrid-context-menu-bg-color;
 $slimgrid-context-menu-opt-hover-font-color:        $slimgrid-font-color;
-$slimgrid-context-menu-opt-hover-bg-color:          #e6e9ed;
+$slimgrid-context-menu-opt-hover-border:            1px solid #dae1e7;

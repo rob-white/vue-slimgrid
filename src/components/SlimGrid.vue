@@ -46,6 +46,12 @@ export default {
       columns: [],
       filters: {},
       pagerStats: { avg: 0, count: 0, min: 0, max: 0, sum: 0 },
+      contextMenu: {
+        show: false,
+        top: -9999,
+        left: -9999,
+        options: this.contextMenuOptions
+      },
       events: defaultEvents,
       defaultPlugins: {
         groupItemMetaDataProvider: {
@@ -151,14 +157,6 @@ export default {
   computed: {
     plugins() {
       return _.merge({}, this.defaultPlugins, this.customPlugins);
-    },
-    contextMenu() {
-      return {
-        show: false,
-        top: -9999,
-        left: -9999,
-        options: this.contextMenuOptions
-      };
     },
     slickGridOptions() {
       return {

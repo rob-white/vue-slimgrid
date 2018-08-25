@@ -16,7 +16,9 @@ export default {
   data: () => ({
     data: [],
     contextMenuOptions: [
-      { label: 'Option1' }
+      { label: 'Option-1' },
+      { label: 'Option-2' },
+      { label: 'Option-3' }
     ],
     columnOptions: {
       'column-0': {
