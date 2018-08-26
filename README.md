@@ -502,6 +502,9 @@ function(e, args) {
   <slim-grid :show-pager-stats="false"></slim-grid>
 ```
 
+### SlickGrid Options
+> Each of the base SlickGrid Grid options are also available. *See the [SlickGrid Grid Options Wiki](https://github.com/mleibman/SlickGrid/wiki/Grid-Options) for defaults and descriptions.*
+
 ## Available Events
 *To-Do*
 
