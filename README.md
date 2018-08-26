@@ -353,7 +353,7 @@ function(item) {
 > To-Do Documentation
 
 ### contextMenuOptions
-> Options that show in the context-menu when a user right-clicks selected grid cells. 
+> Options to add to the context-menu that displays when a user right-clicks selected grid cells. 
 
 **Default:** ```[]```
 
