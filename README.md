@@ -220,7 +220,7 @@ export default {
 ### selectionModel
 > The SlickGrid selection model to use when rendering the grid.
 
-**Default:** ```Slick.CellSelectionModel()```
+**Default:** ```Plugins.CellSelectionModel()```
 
 **Example:**
 ```html
@@ -274,13 +274,15 @@ export default {
           events: {
 
             onSomeAvailableEvent: {
-              // The "before" and "after" keys can be excluded if you don't want to use them.
+              // Optional
               before(e, args) {
                 // Do something "before" the event is fired.
               },
+              // Required
               on(e, args) {
                 // Do something "on" this event being fired.
               },
+              // Optional
               after(e, args) {
                 // Do something "after" the event is fired.
               }
@@ -305,7 +307,38 @@ export default {
 > To-Do Documentation
 
 ### contextMenuOptions
-> To-Do Documentation
+> Options that show in the context-menu when a user right-clicks selected grid cells. 
+
+**Default:** ```[]```
+
+**Example:**
+
+![Example](https://raw.githubusercontent.com/rob-white/vue-slimgrid/master/doc/context-menu.png?v)
+
+
+```html
+  <template>
+    <slim-grid :context-menu-options="options"></slim-grid>
+  </template>
+
+  <script>
+    export default {
+      data: () => ({
+
+        // Each option is required to have a unique "label" key.
+        //
+        // Other custom keys may also be added that can be 
+        // used in the event when an option is selected.
+        options: [
+          { label: 'Option-1' },
+          { label: 'Option-2' },
+          { label: 'Option-3' }
+        ]
+        
+      })
+    }
+  </script>
+```
 
 ### downloadable
 > Show or hide the ability to download the raw/filtered data as csv in the pager.
