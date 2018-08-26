@@ -345,9 +345,32 @@ function(item) {
   </script>
 ```
 
-
 ### sort
-> To-Do Documentation
+> The function to use when a sort operation is performed on data.
+
+**Default:** 
+```javascript
+function(e, args) {
+
+  args.grid.getData().sort(function(row1, row2) {
+    for (let i = 0, l = args.sortCols.length; i < l; i++) {
+      const sortAsc = args.hasOwnProperty("command")
+        ? args.command === "sort-asc"
+        : args.sortCols[i].sortAsc;
+      const field = args.sortCols[i].hasOwnProperty("field")
+        ? args.sortCols[i].field
+        : args.sortCols[i].sortCol.field;
+      const sign = sortAsc ? 1 : -1;
+      const x = row1[field],
+        y = row2[field];
+      const result = (x < y ? -1 : x > y ? 1 : 0) * sign;
+      if (result != 0) return result;
+    }
+    return 0;
+  }, true);
+
+}
+```
 
 ### grouping
 > To-Do Documentation
