@@ -88,24 +88,19 @@ export default {
 
 ```javascript
 {
+  // Along with their normal values, all options may also be used with anonymous functions:
+  // order(column) {
+  //     return column.id == 'col1' ? -1 : 0;
+  // }
+
   /**
    * The position of the column in the header relative to others.
    * Lower number (more left), Higher number (more right)
-   * 
-   * You can also provide a function rather than a number:
-   * order(column) {
-   *     return column.id == 'col1' ? -1 : 0;
-   * }
    */
   order: idx,
 
   /**
    * Show or hide the column.
-   * 
-   * You can also provide a function rather than a boolean:
-   * hidden(column) {
-   *     return column.id == 'col1' ? true : false;
-   * }
    */
   hidden: false,
 
@@ -133,6 +128,9 @@ export default {
   minWidth: 30,
   cssClass: "text-center",
   defaultSortAsc: true,
+  groupTotalsFormatter(totals, columnDef) {
+    return null;
+  },
   formatter(row, cell, value, columnDef, dataContext) {
     return value;
   }
@@ -373,7 +371,65 @@ function(e, args) {
 ```
 
 ### grouping
-> To-Do Documentation
+> Set multi-level groupings for rows. *See the [SlickGrid Grouping Example](http://mleibman.github.io/SlickGrid/examples/example-grouping) for more details.*
+
+**Default:** ```[]```
+
+**Example:**
+
+![Example](https://raw.githubusercontent.com/rob-white/vue-slimgrid/master/doc/grouping.png?v)
+
+```html
+  <template>
+    <slim-grid :grouping="byDuration" :column-options="columnOptions"></slim-grid>
+  </template>
+
+  <script>
+    import { Data } from 'slickgrid-es6';
+    import SlimGrid from 'vue-slimgrid';
+
+    export default {
+      components: { SlimGrid },
+      data: () => ({
+        byDuration: {
+          getter: 'duration',
+          formatter(g) {
+            return 'Duration:  ' + g.value + ' <span style="color:green">(' + g.count + ' items)</span>';
+          },
+          aggregators: [
+            new Data.Aggregators.Avg('percentComplete'),
+            new Data.Aggregators.Sum('cost')
+          ],
+          aggregateCollapsed: false,
+          lazyTotalsCalculation: true
+        },
+        columnOptions: {
+
+          // Change how the totals row is displayed by using the 'groupTotalsFormatter' option.
+          percentComplete: {
+            groupTotalsFormatter(totals, columnDef) {
+              let val = totals.avg && totals.avg[columnDef.field];
+              if (val != null) {
+                return 'Avg: ' + Math.round(val) + '%';
+              }
+              return '';
+            }
+          },
+          cost: {
+            groupTotalsFormatter(totals, columnDef) {
+              let val = totals.sum && totals.sum[columnDef.field];
+              if (val != null) {
+                return 'Total: ' + ((Math.round(parseFloat(val)*100)/100));
+              }
+              return '';
+            }
+          }
+
+        }
+      })
+    }
+  </script>
+```
 
 ### contextMenuOptions
 > Options to add to the context-menu that displays when a user right-clicks selected grid cells. 

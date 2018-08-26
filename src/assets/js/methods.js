@@ -419,6 +419,9 @@ export default {
       minWidth: 30,
       cssClass: "text-center",
       defaultSortAsc: true,
+      groupTotalsFormatter() {
+        return null;
+      },
       formatter(row, cell, value) {
         return value;
       }
@@ -444,7 +447,7 @@ export default {
     }
 
     return _.mapValues(defaults, (value, key) => {
-      return _.isFunction(value) && ["formatter", "hidden", "order"].indexOf(key) === -1 ? value() : value;
+      return _.isFunction(value) && ["groupTotalsFormatter", "formatter", "hidden", "order"].indexOf(key) === -1 ? value(defaults[column]) : value;
     });
   },
 
