@@ -160,7 +160,10 @@ export default {
   </template>
 
   <script>
+    import SlimGrid from 'vue-slimgrid';
+
     export default {
+      components: { SlimGrid },
       data: () => ({
         data: ['id': 1, 'col1': 'value', 'col2': 'value']
         columnOptions: {
@@ -229,9 +232,11 @@ export default {
   </template>
 
   <script>
+    import SlimGrid from 'vue-slimgrid';
     import { Plugins } from 'slickgrid-es6';
 
     export default {
+      components: { SlimGrid },
       data: () => ({
         selectionModel() {
           return new Plugins.RowSelectionModel();
@@ -298,7 +303,48 @@ export default {
 ```
 
 ### rowFormatter
-> To-Do Documentation
+> Customize the appearance/handling of particular rows. *See the [SlickGrid Item Metadata Documentation](https://github.com/mleibman/SlickGrid/wiki/Providing-data-to-the-grid#item-metadata) for more details.*
+
+**Default:**
+```javascript 
+function(item) { 
+  return null; 
+}
+```
+
+**Example:**
+
+![Example](https://raw.githubusercontent.com/rob-white/vue-slimgrid/master/doc/row-formatter.png?v)
+
+```html
+  <template>
+    <slim-grid :row-formatter="rowFormatter"></slim-grid>
+  </template>
+
+  <script>
+    import SlimGrid from 'vue-slimgrid';
+
+    export default {
+      components: { SlimGrid },
+      methods: {
+        rowFormatter(row) {
+
+          // Increase the colspan for the column at index 0.
+          // https://github.com/mleibman/SlickGrid/wiki/Providing-data-to-the-grid#item-metadata
+          return {
+            "columns": {
+              0: {
+                "colspan": "2"
+              }
+            }
+          };
+
+        }
+      }
+    }
+  </script>
+```
+
 
 ### sort
 > To-Do Documentation
@@ -322,7 +368,10 @@ export default {
   </template>
 
   <script>
+    import SlimGrid from 'vue-slimgrid';
+
     export default {
+      components: { SlimGrid },
       data: () => ({
 
         // Each option is required to have a unique "label" key.

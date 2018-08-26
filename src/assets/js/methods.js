@@ -118,7 +118,7 @@ export default {
         return provider.getTotalsRowMetadata(item);
       }
 
-      return this.rowFormatter(item, this.dataView);
+      return this.rowFormatter(item);
     };
 
     this.dataView.beginUpdate();

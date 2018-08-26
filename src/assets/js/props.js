@@ -42,8 +42,8 @@ export default {
   },
   rowFormatter: {
     type: Function,
-    default: function(row) {
-      return row;
+    default: function() {
+      return null;
     }
   },
   sort: {
