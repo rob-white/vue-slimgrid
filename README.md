@@ -384,7 +384,6 @@ function(e, args) {
 
 ![Example](https://raw.githubusercontent.com/rob-white/vue-slimgrid/master/doc/context-menu.png?v)
 
-
 ```html
   <template>
     <slim-grid :context-menu-options="options"></slim-grid>
@@ -412,17 +411,6 @@ function(e, args) {
   </script>
 ```
 
-### downloadable
-> Show or hide the ability to download the raw/filtered data as csv in the pager.
-
-**Default:** ```true```
-
-**Example:**
-
-```html
-  <slim-grid :downloadable="false"></slim-grid>
-```
-
 ### showPager
 > Show or hide the pager at the bottom of the grid.
 
@@ -430,8 +418,21 @@ function(e, args) {
 
 **Example:**
 
+![Example](https://raw.githubusercontent.com/rob-white/vue-slimgrid/master/doc/pager.png?v)
+
 ```html
   <slim-grid :show-pager="false"></slim-grid>
+```
+
+### downloadable
+> Show or hide the csv download links for raw/filtered data in the pager.
+
+**Default:** ```true```
+
+**Example:**
+
+```html
+  <slim-grid :downloadable="false"></slim-grid>
 ```
 
 ### showPagerStats

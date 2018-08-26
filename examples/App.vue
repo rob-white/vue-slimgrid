@@ -2,7 +2,6 @@
   <div id="app">
     <slim-grid :context-menu-options="contextMenuOptions" 
                :column-options="columnOptions"
-               :row-formatter="rowFormatter"
                :data="data" 
                :height="500"
     ></slim-grid>
@@ -39,18 +38,6 @@ export default {
       data.push(row);
     }
     this.data = data;
-  },
-  methods: {
-    rowFormatter(row) {
-        console.log(row);
-        return {
-          "columns": {
-            0: {
-              "colspan": "2"
-            }
-          }
-        };
-    }
   }
 };
 </script>
