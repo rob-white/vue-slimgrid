@@ -421,7 +421,7 @@ function(e, args) {
 ![Example](https://raw.githubusercontent.com/rob-white/vue-slimgrid/master/doc/pager.png?v)
 
 ```html
-  <slim-grid :show-pager="false"></slim-grid>
+  <slim-grid :show-pager="true"></slim-grid>
 ```
 
 ### downloadable
