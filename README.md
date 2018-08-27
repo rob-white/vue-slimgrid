@@ -37,9 +37,11 @@ import SlimGrid from 'vue-slimgrid';
 
 export default {
   components: { SlimGrid },
-  data: () => ({
+  data() {
+    return {
       data: this.generateDummyData()
-  }),
+    };
+  },
   methods: {
     generateDummyData() {
       let data = [];
