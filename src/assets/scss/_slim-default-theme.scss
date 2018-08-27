@@ -151,13 +151,6 @@
   border: 2px dashed black;
 }
 
-.colored-cell {
-  height: 95%;
-  display: block;
-  padding: 0px;
-  white-space: nowrap;
-}
-
 
 // Header Styles
 .slick-header {
@@ -378,6 +371,8 @@
   padding: 4px !important;
   font-family: $slimgrid-font-family;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+  border-bottom-right-radius: $slimgrid-border-radius;
+  border-bottom-left-radius: $slimgrid-border-radius;
 
   label {
     font-weight: 400;
