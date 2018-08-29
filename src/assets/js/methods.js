@@ -447,7 +447,7 @@ export default {
     }
 
     return _.mapValues(defaults, (value, key) => {
-      return _.isFunction(value) && ["groupTotalsFormatter", "formatter", "hidden", "order"].indexOf(key) === -1 ? value(defaults[column]) : value;
+      return _.isFunction(value) && ["groupTotalsFormatter", "formatter", "hidden", "order"].indexOf(key) === -1 ? value(defaults) : value;
     });
   },
 
