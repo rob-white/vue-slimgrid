@@ -263,11 +263,10 @@
     border-left: 4px solid transparent;
     background-image: none;
     color: $slimgrid-sort-indicator-color;
-    float: left;
   }
 
   .slick-sort-indicator-desc {
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     display: inline-block;
     width: 0;
     height: 0;
@@ -279,7 +278,6 @@
     border-left: 4px solid transparent;
     background-image: none;
     color: $slimgrid-sort-indicator-color;
-    float: left;
   }
 }
 
