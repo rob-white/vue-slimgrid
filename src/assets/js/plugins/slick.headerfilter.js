@@ -284,7 +284,13 @@ function HeaderFilter(options) {
   function getFilterValues(dataView, column) {
     var seen = [];
     for (var i = 0; i < dataView.getLength(); i++) {
-      var value = dataView.getItem(i)[column.field];
+      var item = dataView.getItem(i);
+
+      if (item.hasOwnProperty('__group') || item.hasOwnProperty('__groupTotals')) {
+        continue;
+      }
+
+      var value = item[column.field];
 
       if (!_.includes(seen, value)) {
         seen.push(value);
@@ -303,7 +309,13 @@ function HeaderFilter(options) {
       seen = [];
 
     for (var i = 0; i < dataView.getLength(); i++) {
-      var value = dataView.getItem(i)[column.field];
+      var item = dataView.getItem(i);
+
+      if (item.hasOwnProperty('__group') || item.hasOwnProperty('__groupTotals')) {
+        continue;
+      }
+
+      var value = item[column.field];
 
       if (filter.length > 0) {
         var mVal = !value ? "" : value;
@@ -331,7 +343,14 @@ function HeaderFilter(options) {
   function getAllFilterValues(data, column) {
     var seen = [];
     for (var i = 0; i < data.length; i++) {
-      var value = data[i][column.field];
+      var item = data[i];
+
+      if (item.hasOwnProperty('__group') || item.hasOwnProperty('__groupTotals')) {
+        continue;
+      }
+
+      var value = item[column.field];
+      
 
       if (!_.includes(seen, value)) {
         seen.push(value);
