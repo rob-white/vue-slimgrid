@@ -188,6 +188,7 @@ function HeaderFilter(options) {
 
     var $filter = $("<div class='filter'>")
       .append($(filterOptions))
+      .css("height", 200)
       .appendTo($menu);
 
     $("<button>Filter</button>")
@@ -223,9 +224,10 @@ function HeaderFilter(options) {
     var top = offset.top + $(this).height();
     var bottom = offset.top + $(this).height() + $menu[0].offsetHeight;
     var windowHeight = $(window).height();
-
+    var scrollTop = $(window).scrollTop();
+    console.log($filter.height());
     if (bottom >= windowHeight) {
-      $filter.css("height", $filter.height() - (bottom - windowHeight) - 1);
+      $filter.css("height", $filter.height() - (bottom - windowHeight - scrollTop) - 1);
     }
 
     $menu.css("top", top).css("left", left > 0 ? left : 0);
