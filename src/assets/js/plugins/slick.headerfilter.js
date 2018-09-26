@@ -225,7 +225,7 @@ function HeaderFilter(options) {
     var bottom = offset.top + $(this).height() + $menu[0].offsetHeight;
     var windowHeight = $(window).height();
     var scrollTop = $(window).scrollTop();
-    console.log($filter.height());
+    
     if (bottom >= windowHeight) {
       $filter.css("height", $filter.height() - (bottom - windowHeight - scrollTop) - 1);
     }
