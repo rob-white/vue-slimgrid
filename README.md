@@ -238,9 +238,7 @@ export default {
     export default {
       components: { SlimGrid },
       data: () => ({
-        selectionModel() {
-          return new Plugins.RowSelectionModel();
-        }
+        selectionModel: new Plugins.RowSelectionModel()
       })
     }
   </script>

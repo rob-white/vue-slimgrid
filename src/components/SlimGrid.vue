@@ -4,7 +4,7 @@
 
 <template>
     <div @click="contextMenu.show = false">
-        <div :style="{ height: height + 'px' }" class="slim-grid" ref="grid"></div>
+        <div :style="{ height: height + 'px' }" class="slim-grid" :class="{ 'bottom-rounded': !showPager }" ref="grid"></div>
         <slim-pager v-if="showPager"
                     :grid-rendered="rendered"
                     :slick-grid="slickGrid"

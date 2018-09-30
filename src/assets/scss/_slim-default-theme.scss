@@ -19,6 +19,11 @@
     box-sizing: content-box;
   }
 
+  &.bottom-rounded {
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+  }
+
   .text-center {
     text-align: center;
   }
