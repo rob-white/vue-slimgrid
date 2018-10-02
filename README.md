@@ -513,7 +513,7 @@ function(e, args) {
 
 ## Available Events
 
-> All events you can listen for on the SlimGrid component use the snake-case syntax:
+> All events you can listen for on the SlimGrid component use the kebab-case syntax:
 ```html
   <template>
     <slim-grid @event-name="handleMethod"></slim-grid>
@@ -594,7 +594,7 @@ function(e, args) {
 **Params:** ```e, args```
 
 ### SlickGrid Events
-> All events exposed by SlickGrid are also available by using snake-case and excluding the word "on" in the event name (see example below). *See the [SlickGrid Events Wiki](https://github.com/mleibman/SlickGrid/wiki/Grid-Events) for parameters.*
+> All events exposed by SlickGrid are also available by using kebab-case and excluding the word "on" in the event name (see example below). *See the [SlickGrid Events Wiki](https://github.com/mleibman/SlickGrid/wiki/Grid-Events) for parameters.*
 
 **Example:**
 ```html
