@@ -90,10 +90,12 @@ export default {
 
 ```javascript
 {
-  // Along with their normal values, all options may also be used with anonymous functions:
-  // order(column) {
-  //     return column.id == 'col1' ? -1 : 0;
-  // }
+  /**
+   * Along with their normal values, all options may also be used with anonymous functions:
+   * order(column) {
+   *     return column.id == 'col1' ? -1 : 0;
+   * }
+   */
 
   /**
    * The position of the column in the header relative to others.
@@ -106,10 +108,14 @@ export default {
    */
   hidden: false,
 
-  // Hide or show the header input field for this column.
+  /**
+   * Show or hide the header input field for this column.
+   */
   headerInput: true,
 
-  // Hide or show the header filter for this column.
+  /**
+   * Show or hide the header filter for this column.
+   */
   headerFilter: true,
 
   /**
@@ -506,7 +512,109 @@ function(e, args) {
 > Each of the base SlickGrid Grid options are also available. *See the [SlickGrid Grid Options Wiki](https://github.com/mleibman/SlickGrid/wiki/Grid-Options) for defaults and descriptions.*
 
 ## Available Events
-*To-Do*
+
+> All events you can listen for on the SlimGrid component use the snake-case syntax:
+```html
+  <template>
+    <slim-grid @event-name="handleMethod"></slim-grid>
+  </template>
+
+  <script>
+    import SlimGrid from 'vue-slimgrid';
+
+    export default {
+      components: { SlimGrid },
+      methods: {
+        handleMethod(args) {
+          // Do something here...
+        }
+      }
+    }
+  </script>
+```
+
+### before-init
+> Triggered right before the SlickGrid instance is created and initialized.
+
+**Params:** ```args```
+
+### after-init
+> Triggered right after the SlickGrid instance is created and initialized.
+
+**Params:** ```args```
+
+### before-data-update
+> Triggered right before the grid is updated with new data.
+
+**Params:** ```args```
+
+### after-data-update
+> Triggered right after the grid is updated with new data.
+
+**Params:** ```args```
+
+### data-view-update
+> Triggered when the underlying DataView data is updated.
+
+**Params:** ```args```
+
+### columns-generated
+> Triggered when columns and their options are generated.
+
+**Params:** ```args```
+
+### filters-generated
+> Triggered when filters are generated from the columns.
+
+**Params:** ```args```
+
+### columns-set
+> Triggered when the generated columns are set on the SlickGrid instance.
+
+**Params:** ```args```
+
+### context-menu-option-selected
+> Triggered when a context-menu option is selected.
+
+**Params:** ```args```
+
+### row-count-changed
+> Triggered when the row count of the data changes. *See [SlickGrid DataView Wiki](https://github.com/mleibman/SlickGrid/wiki/DataView)*
+
+**Params:** ```e, args```
+
+### rows-changed
+> Triggered when rows have been changed in the data. *See [SlickGrid DataView Wiki](https://github.com/mleibman/SlickGrid/wiki/DataView)*
+
+**Params:** ```e, args```
+
+### selected-ranges-changed
+> Triggered when the selected cell range is changed.
+
+**Params:** ```e, args```
+
+### SlickGrid Events
+> All events exposed by SlickGrid are also available by using snake-case and excluding the word "on" in the event name (see example below). *See the [SlickGrid Events Wiki](https://github.com/mleibman/SlickGrid/wiki/Grid-Events) for parameters.*
+
+**Example:**
+```html
+  <template>
+    <slim-grid @dbl-click="handleDblClick"></slim-grid>
+  </template>
+
+  <script>
+    import SlimGrid from 'vue-slimgrid';
+
+    export default {
+      components: { SlimGrid },
+      methods: {
+        handleDblClick(e, args) {
+          console.log('The grid was double clicked!');
+        }
+      }
+    }
+  </script>
+```
 
 ## Contribute
 This package was built to simply make it easier to integrate SlickGrid into personal Vue projects. Some SlickGrid functionality may not work (I haven't tested it on everything), but any pull requests are welcome to add in features or fix bugs!
