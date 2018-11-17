@@ -594,12 +594,14 @@ function(e, args) {
 **Params:** ```e, args```
 
 ### SlickGrid Events
-> All events exposed by SlickGrid are also available by using kebab-case and excluding the word "on" in the event name (see example below). *See the [SlickGrid Events Wiki](https://github.com/mleibman/SlickGrid/wiki/Grid-Events) for parameters.*
+> The following events were renamed from SlickGrid: ```grid-click```, ```grid-dbl-click```, ```grid-key-down```.
+
+> All other events exposed by SlickGrid are also available by using kebab-case and excluding the word "on" in the event name (see example below). *See the [SlickGrid Events Wiki](https://github.com/mleibman/SlickGrid/wiki/Grid-Events) for parameters.*
 
 **Example:**
 ```html
   <template>
-    <slim-grid @dbl-click="handleDblClick"></slim-grid>
+    <slim-grid @grid-dbl-click="handleDblClick"></slim-grid>
   </template>
 
   <script>
