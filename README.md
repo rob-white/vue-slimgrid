@@ -120,7 +120,6 @@ export default {
 
   /**
    * SlickGrid Column Option Defaults
-   * Lower number (more left), Higher number (more right)
    * 
    * The documentation for SlickGrid specific options:
    * https://github.com/mleibman/SlickGrid/wiki/Column-Options
