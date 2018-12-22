@@ -116,7 +116,7 @@ export default {
   },
   autoEdit: {
     type: Boolean,
-    default: true
+    default: false
   },
   autoHeight: {
     type: Boolean,

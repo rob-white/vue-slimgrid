@@ -2,6 +2,7 @@
   <div id="app">
     <slim-grid :data="data" 
                :height="500"
+               :editable="true"
                :column-options="columnOptions"
                :grouping="groupByDuration"
     ></slim-grid>
@@ -9,7 +10,7 @@
 </template>
 
 <script>
-import { Data } from 'slickgrid-es6';
+import { Data, Editors } from 'slickgrid-es6';
 import SlimGrid from "../src/components/SlimGrid.vue";
 
 export default {
@@ -31,6 +32,7 @@ export default {
       },
       columnOptions: {
         percentComplete: {
+          editor: Editors.Text,
           groupTotalsFormatter(totals, columnDef) {
             let val = totals.avg && totals.avg[columnDef.field];
             if (val != null) {

@@ -97,6 +97,9 @@ export default {
     onBeforeCellEditorDestroy: {
       on(e, args) {
         this.$emit("before-cell-editor-destroy", e, args);
+      },
+      after(e, args) {
+        this.dataView.refresh();
       }
     },
     onBeforeDestroy: {

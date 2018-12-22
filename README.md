@@ -510,8 +510,36 @@ function(e, args) {
 ### SlickGrid Options
 > Each of the base SlickGrid Grid options are also available. *See the [SlickGrid Grid Options Wiki](https://github.com/mleibman/SlickGrid/wiki/Grid-Options) for defaults and descriptions.*
 
-## Available Events
+## Enable Editing
+> You can enable editing of cells by enabling the SlickGrid edit options and setting editors on the columns you want. *See the [SlickGrid Examples](https://github.com/mleibman/SlickGrid/wiki/Examples) for examples & cell editor info.*
+```html
 
+  <template>
+    <slim-grid :editable="true" :column-options="columnOptions"></slim-grid>
+  </template>
+
+  <script>
+    import { Editor } from 'slickgrid-es6';
+    import SlimGrid from 'vue-slimgrid';
+
+    export default {
+      components: { SlimGrid },
+      data: () => ({
+        columnOptions: {
+
+          // Add a text editor to all columns. If you want to write your own custom cell editor, see below:
+          // https://github.com/mleibman/SlickGrid/wiki/Writing-custom-cell-editors
+          '*': {
+            editor: Editor.Text
+          }
+
+        }
+      })
+    }
+  </script>
+```
+
+## Available Events
 > All events you can listen for on the SlimGrid component use the kebab-case syntax:
 ```html
   <template>
