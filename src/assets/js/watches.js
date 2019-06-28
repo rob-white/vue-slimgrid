@@ -3,7 +3,7 @@ export default {
     this.setData();
   },
   grouping() {
-    this.setDataViewGrouping();
+    this.setDataViewGrouping(this.grouping);
   },
   filters: {
     handler() {
