@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "json2csv": "^4.2.1",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.21",
     "slickgrid-es6": "^3.0.1"
   },
   "devDependencies": {
